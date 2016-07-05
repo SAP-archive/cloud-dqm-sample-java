@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"	
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:beans="http://www.springframework.org/schema/beans"
+	   xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation=
+	   "http://www.springframework.org/schema/mvc 		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://cxf.apache.org/jaxrs 					http://cxf.apache.org/schemas/jaxrs.xsd
+		http://www.springframework.org/schema/context 	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- import CXF JAX-RS config -->
+	<beans:import resource="classpath:META-INF/cxf/cxf.xml" />
+	<beans:import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<beans:import resource="classpath:META-INF/spring/root-context.xml" />
+
+	<context:component-scan base-package="com.sap.hana.cloud.samples.dq.rs" />
+
+	<jaxrs:server id="api" address="/v1"> 
+		
+		<jaxrs:properties>
+            <entry key="org.apache.cxf.propagate.exception" value="false" />
+        </jaxrs:properties>
+		<jaxrs:serviceBeans>
+			<ref bean="dqFacade" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+            <ref bean="jacksonProvider" />
+        </jaxrs:providers>
+	</jaxrs:server>
+
+	<bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
+
+	<bean id="jacksonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider">
+		<property name="mapper" ref="objectMapper"/>
+	</bean>
+</beans>

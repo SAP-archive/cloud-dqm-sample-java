@@ -19,11 +19,13 @@ Perform a Maven build and then deploy the `dqs.war` file within `target` directo
 
 You can then invoke the `Address Cleanse` Microservice via the following URL:
 
->> https://dqsXYZ.hanatrial.ondemand.com/dqs/api/v1/addressCleanse
+> https://dqsXYZ.hanatrial.ondemand.com/dqs/api/v1/addressCleanse
 
 **NOTE:** Replace XYZ with your own account name, e.g. p12345678. 
 
+Please note that there's a set/collection of sample content for service invocations for [Postman](https://www.getpostman.com/) available here:
 
+[cloud-service-dq-api-rs/src/test/resources/DQaaS.json](/cloud-service-dq-api-rs/src/test/resources/DQaaS.json)
 
 Further reading 
 -----------

@@ -1,0 +1,37 @@
+{
+	"id": "fd301916-111c-08ef-3567-1eb74b53181d",
+	"name": "SAP Data Quality Management [BETA]",
+	"description": "",
+	"order": [
+		"d267b92d-1938-5902-d1cc-0624b530fc50",
+		"292cfe41-1141-75e1-316d-2b443cd153b5",
+		"dfba2bf6-6541-5406-da6f-4ccfd70a376d"
+	],
+	"folders": [],
+	"timestamp": 1467643419750,
+	"owner": "718437",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "292cfe41-1141-75e1-316d-2b443cd153b5",
+			"headers": "Content-Type: application/json\n",
+			"url": "https://dqsXYZ.hanatrial.ondemand.com/dqs/api/v1/addressCleanse",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1467732313515,
+			"name": "addressCleanse (max output)",
+			"description": "",
+			"collectionId": "fd301916-111c-08ef-3567-1eb74b53181d",
+			"responses": [],
+			"rawModeData": "{\n  \"addressInput\": {\n    \"mixed\": \"Dietmar-Hopp-Allee 16\",\n    \"locality\": \"Walldorf\",\n    \"postcode\": \"69190\",\n    \"country\": \"DE\"\n  },\n\n  \"outputFields\": [\n    \"std_addr_address_delivery\", \n\t\"std_addr_locality_full\", \n\t\"std_addr_region_full\", \n\t\"std_addr_postcode_full\", \n\t\"std_addr_country_2char\",\n\t\"std_addr_address_dual\",\n\t\"std_addr_building_name\",\n\t\"std_addr_prim_address\",\n\t\"std_addr_sec_address\",\n\t\"std_addr_prim_name_full\",\n\t\"std_addr_prim_number_full\",\n\t\"std_addr_addr_deldual\",\n\t\"std_addr_addr_deldual_bldg\",\n\t\"std_addr_single_address\",\n\t\"addr_info_code\",\n    \"addr_info_code_msg\",\n    \"addr_asmt_info\",\n    \"addr_asmt_type\",\n    \"addr_asmt_level\",\n    \"addr_language\"\n  ]\n}\n"
+		}
+	]
+}

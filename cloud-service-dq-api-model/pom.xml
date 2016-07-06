@@ -1,86 +1,166 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.sap.hana.cloud.samples</groupId>
-    <artifactId>cloud-service-dq-api</artifactId>
-    <version>0.0.1-BUILD-SNAPSHOT</version>
-  </parent>
-  <artifactId>cloud-service-dq-api-model</artifactId>
-  <name>cloud-service-dq-api-model</name>
-  <description>Contains the domain model and API interfaces</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sap.hana.cloud.samples</groupId>
+		<artifactId>cloud-service-dq-api</artifactId>
+		<version>0.1.0-BUILD-SNAPSHOT</version>
+	</parent>
+	<artifactId>cloud-service-dq-api-model</artifactId>
+	<name>cloud-service-dq-api-model</name>
+	<description>Contains the domain model and API interfaces</description>
 
-  <dependencies>
-     <dependency>
-       <groupId>org.apache.commons</groupId>
-     <artifactId>commons-lang3</artifactId>
-     <version>3.1</version>
-   </dependency>
+	<properties>
+		<org.apache.cxf-version>3.1.5</org.apache.cxf-version>
+		<org.codehaus.jackson-version>1.9.13</org.codehaus.jackson-version>
+		<javax.ws.rs.jsr311-api-version>1.1.1</javax.ws.rs.jsr311-api-version>
+		<org.slf4j-version>1.7.13</org.slf4j-version>
+	</properties>
 
-   <!-- JAX-RS API -->
-   <dependency>
-     <groupId>javax.ws.rs</groupId>
-     <artifactId>jsr311-api</artifactId>
-     <version>${javax.ws.rs.jsr311-api-version}</version>
-   </dependency>
 
-   <!-- Validation -->
-   <dependency>
-       <groupId>javax.validation</groupId>
-       <artifactId>validation-api</artifactId>
-       <version>1.1.0.Final</version>
-   </dependency>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
 
-   <!-- Logging -->
-   <dependency>
-     <groupId>org.slf4j</groupId>
-     <artifactId>slf4j-api</artifactId>
-     <version>${org.slf4j-version}</version>
-   </dependency>
- </dependencies>
+		<!-- JAX-RS API -->
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>${javax.ws.rs.jsr311-api-version}</version>
+		</dependency>
 
- <build>
-   <plugins>
-     <plugin>
-       <artifactId>maven-compiler-plugin</artifactId>
-       <version>2.5.1</version>
-       <configuration>
-         <source>${java-version}</source>
-         <target>${java-version}</target>
-         <showDeprecation>true</showDeprecation>
-         <showWarnings>true</showWarnings>
-       </configuration>
-     </plugin>
-     <plugin>
-       <groupId>org.apache.maven.plugins</groupId>
-       <artifactId>maven-resources-plugin</artifactId>
-       <version>2.5</version>
-       <configuration>
-         <encoding>UTF-8</encoding>
-       </configuration>
-     </plugin>
-   </plugins>
+		<!-- Validation -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
 
-   <pluginManagement>
-     <plugins>
-       <!-- leading by example -->
-       <plugin>
-             <groupId>org.apache.maven.plugins</groupId>
-             <artifactId>maven-dependency-plugin</artifactId>
-             <version>2.10</version>
-             <executions>
-               <execution>
-                 <id>analyze</id>
-                 <goals>
-                   <goal>analyze</goal>
-                 </goals>
-               </execution>
-             </executions>
-             <configuration>
-               <failOnWarning>false</failOnWarning>
-             </configuration>
-       </plugin>
-       </plugins>
-   </pluginManagement>
- </build>
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
 
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Apache CXF -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+			<version>${org.apache.cxf-version}</version>
+		</dependency>
+
+		<!-- Jackson JSON Mapper -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-xc</artifactId>
+			<version>${org.codehaus.jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>${org.codehaus.jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${org.codehaus.jackson-version}</version>
+		</dependency>
+
+		<!-- misc -->
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>${javax.ws.rs.jsr311-api-version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.4</version>
+		</dependency>
+		
+		
+		<!-- Validation -->
+<!-- 
+		<dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>1.1.0.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.1.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator-cdi</artifactId>
+			<version>5.1.1.Final</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish</groupId>
+		    <artifactId>javax.el</artifactId>
+		    <version>3.0.1-b05</version>
+		</dependency>
+ -->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!-- leading by example -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.10</version>
+					<executions>
+						<execution>
+							<id>analyze</id>
+							<goals>
+								<goal>analyze</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<failOnWarning>false</failOnWarning>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>

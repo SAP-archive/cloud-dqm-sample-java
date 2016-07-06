@@ -10,18 +10,15 @@
 		http://www.springframework.org/schema/beans 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 		http://cxf.apache.org/jaxrs 					http://cxf.apache.org/schemas/jaxrs.xsd
 		http://www.springframework.org/schema/context 	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- import CXF JAX-RS config -->
 	<beans:import resource="classpath:META-INF/cxf/cxf.xml" />
 	<beans:import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
-	<beans:import resource="classpath:META-INF/spring/root-context.xml" />
+	<beans:import resource="classpath:META-INF/spring/dqaas-context.xml" />
 
 	<context:component-scan base-package="com.sap.hana.cloud.samples.dq.rs" />
 
 	<jaxrs:server id="api" address="/v1"> 
-		
 		<jaxrs:properties>
             <entry key="org.apache.cxf.propagate.exception" value="false" />
         </jaxrs:properties>

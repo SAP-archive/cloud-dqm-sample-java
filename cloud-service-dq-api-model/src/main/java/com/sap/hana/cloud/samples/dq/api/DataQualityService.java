@@ -1,4 +1,4 @@
-package com.sap.hana.cloud.samples.dq.rs;
+package com.sap.hana.cloud.samples.dq.api;
 
 
 import javax.ws.rs.Consumes;

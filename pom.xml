@@ -6,7 +6,7 @@
 	<artifactId>cloud-service-dq-api</artifactId>
 	<name>cloud-service-dq-api</name>
 	<packaging>pom</packaging>
-	<version>0.0.1-BUILD-SNAPSHOT</version>
+	<version>0.1.0-BUILD-SNAPSHOT</version>
 	<description>Simple service wrapper/API for the SAP HANA Cloud Platform, Data Quality Microservice (DQaaS)</description>
 
 	<properties>

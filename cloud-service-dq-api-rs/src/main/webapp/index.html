@@ -1,0 +1,149 @@
+<!doctype html lang="en">
+<html class="no-js" lang="en" ng-app="dqApp">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>DQaaS - Test drive</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/sticky-footer-navbar.css" >
+
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/modernizr-1.7.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular-resource.min.js"></script>
+  <script src="js/addressCleanseSrv.js"></script>
+  <script src="js/addressCleanseCtlr.js"></script>
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+</head>
+
+<body ng-controller="addressCleanseCtlr">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Data Quality Microservices (BETA) - Test drive</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li id="nav-rest"><a href="docs/index.html">Documentation</a></li>
+            <li id="nav-rest"><a href="about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div id="main" class="container" >
+
+	<div class="alert alert-info" role="alert">{{address.addr_info_code_msg}}</div>
+
+      			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      				<form id="contact" name="contact" method="POST" enctype="application/json" autocomplete="on"  class="form-horizontal">
+      					<fieldset>
+
+      						<!-- Address form -->
+                  <a id="address_data"></a>
+      						<div class="panel panel-default">
+      							<div class="panel-heading">
+      								<h3 class="panel-title">Address data</h3>
+      							</div>
+      							<div class="panel-body">
+
+                     <!-- address-line1 input-->
+                     <div class="control-group">
+                         <label class="control-label">Address Line 1</label>
+                         <div class="controls">
+                             <input id="address-line1" name="address-line1" type="text" placeholder="address line 1" class="input-xlarge" ng-model="address.std_addr_prim_address">
+                             <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                         </div>
+                     </div>
+                   <!-- address-line2 input-->
+                   <div class="control-group">
+                       <label class="control-label">Address Line 2</label>
+                       <div class="controls">
+                           <input id="address-line2" name="address-line2" type="text" placeholder="address line 2" class="input-xlarge" ng-model="address.sstd_addr_sec_address">
+                           <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                       </div>
+                   </div>
+                   <!-- city input-->
+                   <div class="control-group">
+                       <label class="control-label">City / Town</label>
+                       <div class="controls">
+                           <input id="city" name="city" type="text" placeholder="city" class="input-xlarge" ng-model="address.std_addr_locality_full">
+                           <p class="help-block"></p>
+                       </div>
+                   </div>
+                   <!-- region input-->
+                   <div class="control-group">
+                       <label class="control-label">State / Province / Region</label>
+                       <div class="controls">
+                           <input id="region" name="region" type="text" placeholder="state / province / region" class="input-xlarge" ng-model="address.std_addr_region_full">
+                           <p class="help-block"></p>
+                       </div>
+                   </div>
+                   <!-- postal-code input-->
+                   <div class="control-group">
+                       <label class="control-label">Zip / Postal Code</label>
+                       <div class="controls">
+                           <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code" class="input-xlarge" ng-model="address.std_addr_postcode_full">
+                           <p class="help-block"></p>
+                       </div>
+                   </div>
+                   <!-- country select -->
+                   <div class="control-group">
+                       <label class="control-label">Country Code</label>
+                       <div class="controls">
+                           <input id="country-code" name="country-code" type="text" placeholder="country Code" class="input-xlarge" ng-model="address.std_addr_country_2char">
+                           <p class="help-block"></p>
+                       </div>
+                   </div>
+                   
+      						<hr />
+      						<button type="submit" id="saveButton" name="cleanse" value="cleanse" class="btn btn-primary">Cleanse</button>
+      					</fieldset>
+      				</form>
+      			</div>
+      		</div>
+    <footer>
+	    <div id="footer">
+	      <div class="container">
+	        <p class="text-muted">
+	        Copyright &copy; <script type="text/javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">SAP AG</span><br/>
+	        </p>
+	      </div>
+	    </div>
+    </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/jquery.timeago.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
+</body>
+</html>

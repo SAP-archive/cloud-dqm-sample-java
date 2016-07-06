@@ -20,7 +20,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js"></script>
   
   <script src="js/dq.address-cleanse.ctlr.js"></script>
-  <script src="js/dq.address-cleanse.srv.js"></script>
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -58,13 +57,13 @@
 
     <div id="main" class="container" >
 
-	<div class="alert alert-info" role="alert">{{address.addr_info_code_msg}}</div>
+	<div class="alert alert-info" role="alert">{{response.addr_info_code_msg}}</div>
 
       			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       				<form id="contact" name="contact" method="POST" enctype="application/json" autocomplete="on"  class="form-horizontal">
       					<fieldset>
-
-      						<!-- Address form -->
+      						
+      			  <!-- Address form -->
                   <a id="address_data"></a>
       						<div class="panel panel-default">
       							<div class="panel-heading">
@@ -76,7 +75,7 @@
                      <div class="control-group">
                          <label class="control-label">Address Line 1</label>
                          <div class="controls">
-                             <input id="address-line1" name="address-line1" type="text" placeholder="address line 1" class="input-xlarge" ng-model="address.std_addr_prim_address">
+                             <input id="address-line1" name="address-line1" type="text" placeholder="address line 1" class="input-xlarge" ng-model="addressInput.mixed">
                              <p class="help-block">Street address, P.O. box, company name, c/o</p>
                          </div>
                      </div>
@@ -84,7 +83,7 @@
                    <div class="control-group">
                        <label class="control-label">Address Line 2</label>
                        <div class="controls">
-                           <input id="address-line2" name="address-line2" type="text" placeholder="address line 2" class="input-xlarge" ng-model="address.sstd_addr_sec_address">
+                           <input id="address-line2" name="address-line2" type="text" placeholder="address line 2" class="input-xlarge" ng-model="addressInput.mixed2">
                            <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
                        </div>
                    </div>
@@ -92,7 +91,7 @@
                    <div class="control-group">
                        <label class="control-label">City / Town</label>
                        <div class="controls">
-                           <input id="city" name="city" type="text" placeholder="city" class="input-xlarge" ng-model="address.std_addr_locality_full">
+                           <input id="city" name="city" type="text" placeholder="city" class="input-xlarge" ng-model="addressInput.locality">
                            <p class="help-block"></p>
                        </div>
                    </div>
@@ -100,7 +99,7 @@
                    <div class="control-group">
                        <label class="control-label">State / Province / Region</label>
                        <div class="controls">
-                           <input id="region" name="region" type="text" placeholder="state / province / region" class="input-xlarge" ng-model="address.std_addr_region_full">
+                           <input id="region" name="region" type="text" placeholder="state / province / region" class="input-xlarge" ng-model="addressInput.region">
                            <p class="help-block"></p>
                        </div>
                    </div>
@@ -108,7 +107,7 @@
                    <div class="control-group">
                        <label class="control-label">Zip / Postal Code</label>
                        <div class="controls">
-                           <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code" class="input-xlarge" ng-model="address.std_addr_postcode_full">
+                           <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code" class="input-xlarge" ng-model="addressInput.postcode">
                            <p class="help-block"></p>
                        </div>
                    </div>
@@ -116,13 +115,13 @@
                    <div class="control-group">
                        <label class="control-label">Country Code</label>
                        <div class="controls">
-                           <input id="country-code" name="country-code" type="text" placeholder="country Code" class="input-xlarge" ng-model="address.std_addr_country_2char">
+                           <input id="country-code" name="country-code" type="text" placeholder="country Code" class="input-xlarge" ng-model="addressInput.country">
                            <p class="help-block"></p>
                        </div>
                    </div>
                    
       						<hr />
-      						<button type="submit" id="saveButton" name="cleanse" value="cleanse" class="btn btn-primary">Cleanse</button>
+      						<button type="submit" id="cleanseButton" name="cleanse" value="cleanse" class="btn btn-primary" ng-click="cleanse()">Cleanse</button>
       					</fieldset>
       				</form>
       			</div>

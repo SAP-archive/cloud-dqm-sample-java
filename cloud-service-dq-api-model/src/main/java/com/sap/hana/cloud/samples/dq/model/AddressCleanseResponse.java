@@ -65,7 +65,7 @@ public class AddressCleanseResponse implements Serializable
 	String addr_asmt_info = null;
 	String addr_asmt_type = null;
 	String addr_asmt_level = null;
-	String addr_change_significance = null;
+	String addr_change_sig = null;
 	String addr_language = null;
 	
 	/*
@@ -522,13 +522,14 @@ public class AddressCleanseResponse implements Serializable
 	{
 		this.addr_asmt_level = addr_asmt_level;
 	}
-	public String getAddr_change_significance()
+	public String getAddr_change_sig()
 	{
-		return addr_change_significance;
+		return addr_change_sig;
 	}
-	public void setAddr_change_significance(String addr_change_significance)
+	
+	public void setAddr_change_sig(String addr_change_sig)
 	{
-		this.addr_change_significance = addr_change_significance;
+		this.addr_change_sig = addr_change_sig;
 	}
 	public String getAddr_language()
 	{

@@ -34,6 +34,7 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     	                        "addr_asmt_info",
     	                        "addr_asmt_type",
     	                        "addr_asmt_level",
+    	                        "addr_change_sig",
     	                        "addr_language"
     	                        ];
     	
@@ -64,7 +65,6 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     			    'country': response.data.std_addr_country_2char
     			};
     			
-    			
     			// copy back into request model
     			$scope.addressInput = responseObj;
     			
@@ -72,8 +72,7 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     			$("#msg").toggleClass('alert-success', true);
     			$("#msg").toggleClass('alert-danger', false);
     			
-    			 $scope.message = ""; // TODO
-    			
+    			$scope.message = ""; // TODO
     			
     		}, function errorCallback(response) 
     		{
@@ -90,8 +89,6 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     		});
     
     };
- 
- 
 });
 
 

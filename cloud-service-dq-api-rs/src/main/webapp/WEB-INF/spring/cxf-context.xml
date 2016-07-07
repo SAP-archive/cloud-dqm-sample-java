@@ -30,7 +30,7 @@
         </jaxrs:providers>
 	</jaxrs:server>
 
-	<bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
+	<bean id="objectMapper" class="com.sap.hana.cloud.samples.dq.util.CustomObjectMapper" />
 
 	<bean id="jacksonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider">
 		<property name="mapper" ref="objectMapper"/>

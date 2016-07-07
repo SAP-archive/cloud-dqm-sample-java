@@ -64,7 +64,7 @@ public enum OutputFields
 	addr_asmt_info,
 	addr_asmt_type,
 	addr_asmt_level,
-	addr_change_significance,
+	addr_change_sig,
 	addr_language,
 	
 	/*
@@ -303,7 +303,7 @@ public enum OutputFields
 													   addr_asmt_info.toString(), 
 													   addr_asmt_type.toString(), 
 													   addr_asmt_level.toString(), 
-													   addr_change_significance.toString(), 
+													   addr_change_sig.toString(), 
 													   addr_language.toString() };
 	
 	

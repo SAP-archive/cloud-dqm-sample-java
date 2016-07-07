@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.sap.hana.cloud.samples</groupId>
     <artifactId>cloud-service-dq-api</artifactId>
-    <version>0.1.0-BUILD-SNAPSHOT</version>
+    <version>0.2.0-BUILD-SNAPSHOT</version>
   </parent>
   <artifactId>cloud-service-dq-api-rs</artifactId>
   <packaging>war</packaging>
@@ -175,10 +175,12 @@
           <artifactId>cxf-rt-rs-client</artifactId>
           <version>${org.apache.cxf-version}</version>
         </dependency>
+        
+        <!-- DQaaS model & API -->
         <dependency>
         	<groupId>com.sap.hana.cloud.samples</groupId>
         	<artifactId>cloud-service-dq-api-model</artifactId>
-        	<version>0.1.0-BUILD-SNAPSHOT</version>
+        	<version>0.2.0-BUILD-SNAPSHOT</version>
         </dependency>
 	</dependencies>
 

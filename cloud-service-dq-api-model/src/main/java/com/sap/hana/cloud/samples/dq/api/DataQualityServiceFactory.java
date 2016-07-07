@@ -1,14 +1,18 @@
 package com.sap.hana.cloud.samples.dq.api;
 
+import static org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS;
+
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
 import org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider;
-import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.sap.hana.cloud.samples.dq.util.CustomObjectMapper;
+import com.sap.hana.cloud.samples.dq.util.ErrorResponseExceptionMapper;
 
 public class DataQualityServiceFactory
 {
@@ -36,7 +40,10 @@ public class DataQualityServiceFactory
 		final String host = System.getenv("HC_HOST");
 		final String account = System.getenv("HC_ACCOUNT");
 
-		retVal = MessageFormat.format(DESTINATION_URL_TEMPLATE, account, host);
+		if (host != null && account != null)
+		{
+			retVal = MessageFormat.format(DESTINATION_URL_TEMPLATE, account, host);
+		}
 		
 		if (retVal == null)
 		{
@@ -64,14 +71,26 @@ public class DataQualityServiceFactory
 		DataQualityService retVal = null;
 
 		// set up providers
-		List<JacksonJsonProvider> providers = new ArrayList<JacksonJsonProvider>();
-		JacksonJaxbJsonProvider jsonProvider = new JacksonJaxbJsonProvider();
+		List<Object> providers = new ArrayList<Object>();
+		JacksonJaxbJsonProvider jsonProvider = new JacksonJaxbJsonProvider(new CustomObjectMapper(), DEFAULT_ANNOTATIONS);
+		ErrorResponseExceptionMapper srvExMapper = new ErrorResponseExceptionMapper();
+		
 		providers.add(jsonProvider);
+		providers.add(srvExMapper);
 		
 		if (endPoint != null)
 		{
+			
 			// initialize proxy
 			retVal  = JAXRSClientFactory.create(endPoint, DataQualityService.class, providers);
+		}
+		else
+		{
+			// local or non-NEO runtime
+			// TODO - remove hard-coded URL
+			String remoteProxy = "https://dqs{0}.hanatrial.ondemand.com/dqs/api/v1";
+			retVal  = JAXRSClientFactory.create(remoteProxy, DataQualityService.class, providers);
+
 		}
 		
 		return retVal;

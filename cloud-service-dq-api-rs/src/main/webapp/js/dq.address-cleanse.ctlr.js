@@ -68,12 +68,25 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     			// copy back into request model
     			$scope.addressInput = responseObj;
     			
+    			// toogle msg area
+    			$("#msg").toggleClass('alert-success', true);
+    			$("#msg").toggleClass('alert-danger', false);
+    			
+    			 $scope.message = ""; // TODO
     			
     			
     		}, function errorCallback(response) 
     		{
     			console.log('error', response);
-    			alert(response.statusText);
+                $scope.message = response.statusText;
+                
+                if (response.data.cause != undefined)
+                {
+                	$scope.message = response.data.cause;
+                }
+                
+                $("#msg").toggleClass('alert-success', false);
+                $("#msg").toggleClass('alert-danger', true);
     		});
     
     };

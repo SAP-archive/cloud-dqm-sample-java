@@ -3,6 +3,7 @@ package com.sap.hana.cloud.samples.dq.model;
 import java.io.Serializable;
 
 import com.sap.hana.cloud.samples.dq.model.output.AddressSettings;
+import com.sap.hana.cloud.samples.dq.model.output.OutputFields;
 
 /**
  * 
@@ -18,17 +19,12 @@ public class AddressCleanseRequest implements Serializable
 
 	AddressInput addressInput = null;
 	
-	String[] outputFields = null;
+	String[] outputFields = OutputFields.INFO_STR; // ensure that we have at least information data included 
 	
-	AddressSettings AddressSettings = null;
+	AddressSettings AddressSettings = new AddressSettings(); // apply defaults
 
-	public AddressCleanseRequest() {}
-	
-	public AddressCleanseRequest(AddressInput addressInput, String[] outputFields, AddressSettings addressSettings)
-	{
-		new AddressCleanseRequest(addressInput, outputFields);
-		this.AddressSettings = addressSettings;
-	}
+	public AddressCleanseRequest() 
+	{}
 	
 	public AddressCleanseRequest(AddressInput addressInput, String[] outputFields)
 	{
@@ -36,11 +32,17 @@ public class AddressCleanseRequest implements Serializable
 		
 		this.outputFields = (outputFields == null ? null : new String[outputFields.length] );
 		
-		if (outputFields != null)
+		if (outputFields != null && outputFields.length > 0)
 		{
 			this.outputFields = new String[outputFields.length];
 			System.arraycopy(outputFields, 0, this.outputFields, 0, outputFields.length);
 		}
+	}
+	
+	public AddressCleanseRequest(AddressInput addressInput, String[] outputFields, AddressSettings addressSettings)
+	{
+		new AddressCleanseRequest(addressInput, outputFields);
+		this.AddressSettings = addressSettings;
 	}
 	
 	public AddressInput getAddressInput()

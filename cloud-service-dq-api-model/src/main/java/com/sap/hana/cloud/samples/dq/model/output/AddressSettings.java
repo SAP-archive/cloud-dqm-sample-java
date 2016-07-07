@@ -16,12 +16,12 @@ package com.sap.hana.cloud.samples.dq.model.output;
  */
 public class AddressSettings
 {
-	Casing casing = null;
-	Diacritics diacritics = null;
-	ScriptConversion scriptConversion = null;
-	StreetFormat streetFormat = null;
-	PostalFormat postalFormat = null;
-	RegionFormat regionFormat = null;
+	Casing casing = Casing.mixed;
+	Diacritics diacritics = Diacritics.include;
+	ScriptConversion scriptConversion = ScriptConversion.none;
+	StreetFormat streetFormat = StreetFormat.countryCommonStyle;
+	PostalFormat postalFormat = PostalFormat.countryCommonStyle;
+	RegionFormat regionFormat = RegionFormat.countryCommonStyle;
 
 	public Casing getCasing()
 	{

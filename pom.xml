@@ -6,7 +6,7 @@
 	<artifactId>cloud-service-dq-api</artifactId>
 	<name>cloud-service-dq-api</name>
 	<packaging>pom</packaging>
-	<version>0.1.0-BUILD-SNAPSHOT</version>
+	<version>0.2.0-BUILD-SNAPSHOT</version>
 	<description>Simple service wrapper/API for the SAP HANA Cloud Platform, Data Quality Microservice (DQaaS)</description>
 
 	<properties>
@@ -16,8 +16,6 @@
 		<javax.ws.rs.jsr311-api-version>1.1.1</javax.ws.rs.jsr311-api-version>
 		<org.slf4j-version>1.7.13</org.slf4j-version>
 	</properties>
-	
-	
 
 	 <organization>
         <name>SAP SE</name>

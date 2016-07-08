@@ -57,7 +57,15 @@ public class DataQualityFacade
 		catch (ServiceException ex)
 		{
 			ErrorMessage msg = ex.getErrorMessage();
-			return Response.serverError().entity(msg).build();
+			
+			int status = 500;
+			
+			if (msg != null && msg.getHttpStatusCode() != null)
+			{
+				status = msg.getHttpStatusCode();
+			}
+			
+			return Response.status(status).entity(msg).build();
 		}
 		catch (WebApplicationException ex) 
 		{
@@ -69,7 +77,7 @@ public class DataQualityFacade
 				Object entity = response.getEntity();
 				
 				ErrorMessage msg = new ErrorMessage(status, "" + entity);
-				return Response.serverError().entity(msg).build();
+				return Response.status(status).entity(msg).build();
 			}
 			
 			return ex.getResponse();

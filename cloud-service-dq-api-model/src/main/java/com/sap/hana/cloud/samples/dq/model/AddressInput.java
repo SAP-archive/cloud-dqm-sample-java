@@ -3,6 +3,11 @@ package com.sap.hana.cloud.samples.dq.model;
 import java.io.Serializable;
 
 /**
+ * Dumb (reads: flat) address input object.
+ * 
+ * TODO convert into nested objects for structural reasons
+ *
+ * 
  * The set of fields selected must use one of the following formats.
  * <ul>
  * <li>{@link AddressFormat1} – part free-form, part discrete</li>

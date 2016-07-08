@@ -47,13 +47,13 @@ public class DataQualityServiceFactory
 		
 		if (retVal == null)
 		{
-			logger.error("No API destination with name '{}‘ found!", retVal);			
+			logger.error("No API endpoint found!");			
 		}
 		else
 		{
 			if (logger.isInfoEnabled())
 			{
-				logger.info("API destination: " + retVal);			
+				logger.info("API endpoint URI: " + retVal);			
 			}
 		}
 
@@ -80,17 +80,14 @@ public class DataQualityServiceFactory
 		
 		if (endPoint != null)
 		{
-			
 			// initialize proxy
 			retVal  = JAXRSClientFactory.create(endPoint, DataQualityService.class, providers);
 		}
-		else
+		else // fall-back (local or non-NEO runtime env)
 		{
-			// local or non-NEO runtime
 			// TODO - remove hard-coded URL
-			String remoteProxy = "https://dqs{0}.hanatrial.ondemand.com/dqs/api/v1";
+			String remoteProxy = MessageFormat.format("https://dqaas{0}.hanatrial.ondemand.com/dq", System.getenv("HC_ACCOUNT"));
 			retVal  = JAXRSClientFactory.create(remoteProxy, DataQualityService.class, providers);
-
 		}
 		
 		return retVal;

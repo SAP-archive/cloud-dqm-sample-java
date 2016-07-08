@@ -82,4 +82,54 @@ public class AddressSettings
 	{
 		this.regionFormat = regionFormat;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder builder = new StringBuilder();
+		builder.append("AddressSettings [casing=").append(casing).append(", diacritics=").append(diacritics)
+		        .append(", scriptConversion=").append(scriptConversion).append(", streetFormat=").append(streetFormat)
+		        .append(", postalFormat=").append(postalFormat).append(", regionFormat=").append(regionFormat)
+		        .append("]");
+		return builder.toString();
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((casing == null) ? 0 : casing.hashCode());
+		result = prime * result + ((diacritics == null) ? 0 : diacritics.hashCode());
+		result = prime * result + ((postalFormat == null) ? 0 : postalFormat.hashCode());
+		result = prime * result + ((regionFormat == null) ? 0 : regionFormat.hashCode());
+		result = prime * result + ((scriptConversion == null) ? 0 : scriptConversion.hashCode());
+		result = prime * result + ((streetFormat == null) ? 0 : streetFormat.hashCode());
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		AddressSettings other = (AddressSettings) obj;
+		if (casing != other.casing) return false;
+		if (diacritics != other.diacritics) return false;
+		if (postalFormat != other.postalFormat) return false;
+		if (regionFormat != other.regionFormat) return false;
+		if (scriptConversion != other.scriptConversion) return false;
+		if (streetFormat != other.streetFormat) return false;
+		return true;
+	}
 }

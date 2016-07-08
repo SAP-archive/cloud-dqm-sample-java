@@ -1483,6 +1483,4 @@ public class AddressCleanseResponse implements Serializable
 	{
 		this.cause = cause;
 	}
-
-
 }

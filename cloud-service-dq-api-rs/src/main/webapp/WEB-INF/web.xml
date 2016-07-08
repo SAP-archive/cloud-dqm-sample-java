@@ -14,7 +14,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CXFServlet</servlet-name>
-		<url-pattern>/api/*</url-pattern>
+		<url-pattern>/dq/*</url-pattern>
 	</servlet-mapping>
 	<filter>
 		<filter-name>RequestContextFilter</filter-name>
@@ -22,7 +22,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>RequestContextFilter</filter-name>
-		<url-pattern>/api/*</url-pattern>
+		<url-pattern>/dq/*</url-pattern>
 	</filter-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

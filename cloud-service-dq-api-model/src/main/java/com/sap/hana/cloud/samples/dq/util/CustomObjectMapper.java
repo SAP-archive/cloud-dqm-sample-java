@@ -29,6 +29,7 @@ public class CustomObjectMapper extends ObjectMapper
 		// make deserializer use JAXB annotations (only)
 		this.setAnnotationIntrospector(introspector);
 		
+		// TODO leverage NamingStrategy to make reponse attributes more Java-like
 		//this.setPropertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
 	}
 }

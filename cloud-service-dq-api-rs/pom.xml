@@ -201,7 +201,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<warName>dqs</warName>
+					<warName>ROOT</warName>
 				</configuration>
 			</plugin>
 			<plugin>

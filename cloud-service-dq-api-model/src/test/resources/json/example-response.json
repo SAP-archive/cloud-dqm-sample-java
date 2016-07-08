@@ -1,0 +1,22 @@
+{
+  "addr_asmt_level": "PR",
+  "addr_info_code_msg": "",
+  "std_addr_prim_name_full": "Dietmar-Hopp-Allee",
+  "std_addr_addr_deldual_bldg": "Dietmar-Hopp-Allee 16",
+  "std_addr_postcode_full": "69190",
+  "std_addr_address_dual": "",
+  "std_addr_country_2char": "DE",
+  "std_addr_region_full": "Baden-Württemberg",
+  "addr_language": "DE",
+  "addr_info_code": "",
+  "std_addr_prim_address": "Dietmar-Hopp-Allee 16",
+  "std_addr_addr_deldual": "Dietmar-Hopp-Allee 16",
+  "std_addr_address_delivery": "Dietmar-Hopp-Allee 16",
+  "addr_asmt_info": "C",
+  "addr_asmt_type": "S",
+  "std_addr_single_address": "Dietmar-Hopp-Allee 16 69190 Walldorf, Baden",
+  "std_addr_sec_address": "",
+  "std_addr_prim_number_full": "16",
+  "std_addr_locality_full": "Walldorf, Baden",
+  "std_addr_building_name": ""
+}

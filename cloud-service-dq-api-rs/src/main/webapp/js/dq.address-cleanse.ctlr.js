@@ -6,7 +6,7 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     {
     	$http({
     		  method: 'GET',
-    		  url: 'api/v1/addressCleanse'
+    		  url: 'dq/addressCleanse'
     		}).then(function successCallback(response) 
     		{
     		    // this callback will be called asynchronously
@@ -46,7 +46,7 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     	
     	$http({
     		  method: 'POST',
-    		  url: 'api/v1/addressCleanse',
+    		  url: 'dq/addressCleanse',
     		  data: requestObj,
     		  headers: 
     		  {

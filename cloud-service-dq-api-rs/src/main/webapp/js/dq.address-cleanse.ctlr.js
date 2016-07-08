@@ -56,6 +56,9 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     		{
     			console.log('success', response);
     			
+                // clean state
+                $scope.resetState();
+            
     			var responseObj = {
     				'mixed': response.data.std_addr_prim_address,
     				'mixed2': response.data.std_addr_sec_address,
@@ -72,21 +75,55 @@ dqApp.controller('dq.address-cleanse.ctlr', function ($scope, $http) {
     			$("#msg").toggleClass('alert-success', true);
     			$("#msg").toggleClass('alert-danger', false);
     			
-    			$scope.message = ""; // TODO
+                if (response.data.addr_asmt_info != undefined)
+                {
+                    switch (response.data.addr_asmt_info)
+                    {
+                        case 'B': $scope.message = 'Blank address sent'; $("#msg").toggleClass('alert-info', true); break;
+                        case 'I': $scope.message = 'Invalid address'; $("#msg").toggleClass('alert-danger', true); break;
+                        case 'C': $scope.message = 'Corrected'; $("#msg").toggleClass('alert-warning', true); break;
+                        case 'V': $scope.message = 'Valid'; $("#msg").toggleClass('alert-success', true); break;
+                        default: 
+                    }
+                    
+                }
+            
+                if (response.data.addr_info_code_msg != undefined)
+                {
+                    $scope.message = response.data.addr_info_code_msg; 
+                }
+                else
+                {
+
+                }
+    			
     			
     		}, function errorCallback(response) 
     		{
     			console.log('error', response);
-                $scope.message = response.statusText;
                 
+                // clean state
+                $scope.resetState();
+            
+                $("#msg").toggleClass('alert-danger', true);
+            
                 if (response.data.cause != undefined)
                 {
                 	$scope.message = response.data.cause;
-                }
-                
-                $("#msg").toggleClass('alert-success', false);
-                $("#msg").toggleClass('alert-danger', true);
+                } 
     		});
+        
+        
+        $scope.resetState = function()
+        {
+            $scope.message = "";
+            
+            $("#msg").toggleClass('alert-success', false);
+            $("#msg").toggleClass('alert-warning', false);
+            $("#msg").toggleClass('alert-info', false);
+            $("#msg").toggleClass('alert-danger', false);
+        };
+        
     
     };
 });

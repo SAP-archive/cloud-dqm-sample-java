@@ -56,76 +56,82 @@
     </div>
 
     <div id="main" class="container" >
-
-				<div id="msg" class="alert alert-info" role="alert">{{message}}</div>
-
-      			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      				<form id="contact" name="contact" method="POST" enctype="application/json" autocomplete="on"  class="form-horizontal">
-      					<fieldset>
-      						
-      			  <!-- Address form -->
-                  <a id="address_data"></a>
-      						<div class="panel panel-default">
-      							<div class="panel-heading">
-      								<h3 class="panel-title">Address data</h3>
-      							</div>
-      							<div class="panel-body">
-
-                     <!-- address-line1 input-->
-                     <div class="control-group">
-                         <label class="control-label">Address Line 1</label>
-                         <div class="controls">
-                             <input id="address-line1" name="address-line1" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.mixed">
-                             <p class="help-block">Street address, P.O. box, company name, c/o</p>
-                         </div>
-                     </div>
-                   <!-- address-line2 input-->
-                   <div class="control-group">
-                       <label class="control-label">Address Line 2</label>
-                       <div class="controls">
-                           <input id="address-line2" name="address-line2" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.mixed2">
-                           <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
-                       </div>
-                   </div>
-                   <!-- city input-->
-                   <div class="control-group">
-                       <label class="control-label">City / Town</label>
-                       <div class="controls">
-                           <input id="city" name="city" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.locality">
-                           <p class="help-block"></p>
-                       </div>
-                   </div>
-                   <!-- region input-->
-                   <div class="control-group">
-                       <label class="control-label">State / Province / Region</label>
-                       <div class="controls">
-                           <input id="region" name="region" type="text" placeholder="" class="form-control  input-xlarge" ng-model="addressInput.region">
-                           <p class="help-block"></p>
-                       </div>
-                   </div>
-                   <!-- postal-code input-->
-                   <div class="control-group">
-                       <label class="control-label">Zip / Postal Code</label>
-                       <div class="controls">
-                           <input id="postal-code" name="postal-code" type="text" placeholder="" class="form-control  input-xlarge" ng-model="addressInput.postcode">
-                           <p class="help-block"></p>
-                       </div>
-                   </div>
-                   <!-- country select -->
-                   <div class="control-group">
-                       <label class="control-label">Country Code</label>
-                       <div class="controls">
-                           <input id="country-code" name="country-code" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.country">
-                           <p class="help-block"></p>
-                       </div>
-                   </div>
-                   
-      						<hr />
-      						<button type="submit" id="cleanseButton" name="cleanse" value="cleanse" class="btn btn-primary" ng-click="cleanse()">Cleanse</button>
-      					</fieldset>
-      				</form>
-      			</div>
-      		</div>
+         <div class="row">
+             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="msg" class="alert" role="alert">{{message}}</div>
+             </div>
+        </div> <!-- row: messages -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      		    <form id="contact" name="contact" method="POST" enctype="application/json" autocomplete="on"  class="form-horizontal">
+      		        <fieldset>
+      		            <!-- Address form -->
+                        <a id="address_data"></a>
+      		            <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Address data</h3>
+                            </div>
+                            <div class="panel-body">
+      						    <!-- address-line1 input-->
+                                <div class="control-group" id="address-line1-group">
+                                  <label class="control-label">Address Line 1</label>
+                                  <div class="controls">
+                                      <input id="address-line1" name="address-line1" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.mixed">
+                                      <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                                  </div>
+                                </div>
+                                <!-- address-line2 input-->
+                                <div class="control-group" id="address-line2-group">
+                                    <label class="control-label">Address Line 2</label>
+                                    <div class="controls">
+                                        <input id="address-line2" name="address-line2" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.mixed2">
+                                        <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                                    </div>
+                                </div>
+                                <!-- city input-->
+                                <div class="control-group" id="city-group">
+                                    <label class="control-label">City / Town</label>
+                                    <div class="controls">
+                                        <input id="city" name="city" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.locality">
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
+                                <!-- region input-->
+                                <div class="control-group" id="region-group">
+                                    <label class="control-label">State / Province / Region</label>
+                                    <div class="controls">
+                                        <input id="region" name="region" type="text" placeholder="" class="form-control  input-xlarge" ng-model="addressInput.region">
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
+                                <!-- postal-code input-->
+                                <div class="control-group" id="postal-code-group">
+                                    <label class="control-label">Zip / Postal Code</label>
+                                    <div class="controls">
+                                        <input id="postal-code" name="postal-code" type="text" placeholder="" class="form-control  input-xlarge" ng-model="addressInput.postcode">
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
+                                <!-- country select -->
+                                <div class="control-group" id="country-group">
+                                    <label class="control-label">Country Code</label>
+                                    <div class="controls">
+                                        <input id="country-code" name="country-code" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.country">
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
+                                
+                                
+                                <hr />
+      						    <button type="submit" id="cleanseButton" name="cleanse" value="cleanse" class="btn btn-primary" ng-click="cleanse()">Cleanse</button>
+                            </div> <!-- panel-body -->
+                        </div> <!-- panel -->
+      		        </fieldset>
+      		    </form>
+      		</div> <!-- address form -->
+        </div> <!-- row: address input -->
+    </div> <!-- main container -->
+                    
     <footer>
 	    <div id="footer">
 	      <div class="container">

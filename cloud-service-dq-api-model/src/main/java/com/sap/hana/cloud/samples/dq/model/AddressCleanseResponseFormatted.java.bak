@@ -1,0 +1,1476 @@
+package com.sap.hana.cloud.samples.dq.model;
+
+import java.io.Serializable;
+
+/**
+ * Dumb (reads: flat) response object.
+ * 
+ * TODO convert into nested objects for structural reasons
+ * 
+ */
+public class AddressCleanseResponseFormatted implements Serializable
+{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/*
+	 * Address Output Field: Postbox for SAP Business Suite
+     * The following output fields are specifically for applications that consume postbox address data in the SAP Business Suite data model.
+     * 
+     * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?f4b8ee5c3d354abfa1cd2356c16334e4.html
+	 */
+	String stdAddrPoBoxCountry_2char = null;
+	String stdAddrPoBoxLocalityFull = null;
+	String stdAddrPoBoxDelinstFull = null;
+	String stdAddrPoBoxRegion = null;
+	String stdAddrPoBoxRegionFull = null;
+	String stdAddrPoBoxRegionCode = null;
+	String stdAddrPoBoxRegion2 = null;
+	String stdAddrPoBoxRegion2Full = null;
+	String stdAddrPoBoxRegion2Code = null;
+	String stdAddrPoBoxPostcodeFull = null;
+	String sapFormattedPoBoxPostcode = null;
+	String sapInFmtPoBoxPostcode = null;
+	String stdAddrPoBoxNumber = null;
+	String stdAddrPoBoxFull = null;
+	String addrPoBoxInfoCode = null;
+	String addrPoBoxInfoCodeMsg = null;
+	String addrPoBoxAsmtInfo = null;
+	String addrPoBoxAsmtType = null;
+	String addrPoBoxAsmtLevel = null;
+	
+	/*
+	 * Address Output Field: GeoLocation Coordinates
+     * The following output fields include properties regarding geo-location coordinates for the address.
+     * Note that when sending a request with input fields in the SAP Business Suite data model,the geo-location 
+     * coordinates are returned only for the street address,not the postbox address.
+     * 
+     * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?c5e4334965ff4a5e9233e76cc650a975.html
+	 */
+	String addrLatitude = null;
+	String addrLongitude = null;
+	String geoAsmtLevel = null;
+	String geoInfoCode = null;
+	String geoInfoCodeMsg = null;
+	
+	/*
+	 * Address Output Field: Assignment Codes
+	 * The following output fields contain codes that provide insight into the process that assigns the address to reference data.
+	 * 
+	 * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?3fff045179fc442d94845458b37184db.html
+	 */
+	String addrInfoCode = null;
+	String addrInfoCodeMsg = null;
+	String addrAsmtInfo = null;
+	String addrAsmtType = null;
+	String addrAsmtLevel = null;
+	String addrChangeSig = null;
+	String addrLanguage = null;
+	
+	/*
+	 * Address Output Field: Non-Address
+     * The following output fields include non-address data encountered with the address data.
+     * 
+     * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?9bdfcec363d345c2ad2a16fab50d1fa9.html
+	 */
+	String addrAddressRem = null;
+	String addrAddressRem2 = null;
+	String addrAddressRem3 = null;
+	String addrAddressRem4 = null;
+	String addrRemainderFull = null;
+	String addrExtra = null;
+	String addrExtra2 = null;
+	String addrExtra3 = null;
+	String addrExtra4 = null;
+	String addrRemainderExtraPmbFull = null;
+	
+	/*
+	 * Address Output Field: Country-Specific
+	 * The following output fields include information related to address data that is unique to an individual country.
+	 * 
+	 * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?8e60124732a14c808c47ead641dab562.html
+	 */
+	String stdAddrAdditionalInfo = null;
+	String stdAddrAdditionalInfo2 = null;
+	String stdAddrAdditionalInfo3 = null;
+	String stdAddrAdditionalInfo4 = null;
+	String stdAddrAdditionalInfo5 = null;
+	String stdAddrAdditionalInfo6 = null;
+	
+	/*
+	 * Address Output Field: Composite
+	 * The following output fields include composite address data.
+	 * 
+	 * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?f9ed501f6edc45deabcd4d6b770bb71b.html
+	 */
+	String stdAddrSingleAddress = null;
+	String stdAddrFullAddress = null;
+	String stdAddrLastline = null;
+	
+	/*
+	 * Address Output Field: Secondary
+     * The following output fields include variations of secondary address data.
+     * 
+     * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?49ba6af01c1d40bf8fa42cc3b0fea52e.html
+	 */
+	String stdAddrBlockNumber = null;
+	String stdAddrBlockDesc = null;
+	String stdAddrBlockFull = null;
+	String stdAddrWingName = null;
+	String stdAddrWingDesc = null;
+	String stdAddrWingFull = null;
+	String stdAddrStairwellName = null;
+	String stdAddrStairwellDesc = null;
+	String stdAddrStairwellFull = null;
+	String stdAddrFloorNumber = null;
+	String stdAddrFloorDesc = null;
+	String stdAddrFloorQual = null;
+	String stdAddrFloorFull = null;
+	String stdAddrUnitNumber = null;
+	String stdAddrUnitDesc = null;
+	String stdAddrUnitQual = null;
+	String stdAddrUnitFull = null;
+	String stdAddrRoomNumber = null;
+	String stdAddrRoomFull = null;
+	String stdAddrPmbFull = null;
+	String stdAddrSecaddrNoRoom = null;
+	String stdAddrSecaddrNoFloor = null;
+	String stdAddrSecaddrNoFloorRoom = null;
+	
+	/*
+	 * Address Output Field: House Number
+     * The following output fields include variations of house number data.
+     * <code>String stdAddrPrimNumber</code> -	The house number for a street address,such as “100” in the address “100 Main St”. For postbox addresses such as “PO Box 500” it contains the box number “500”,and for rural addresses such as “RR 1” it contains the route number “1”.
+     * <code>String stdAddrPrimNumberDesc</code> -	The number descriptor. For example,in the Mexico address “Km 12” the descriptor is “Km”,and in the Japanese address “4号” the descriptor is “号”.
+     * <code>String stdAddrPrimNumberExtra</code> -	Data that is found attached to or near the house number. For example,in the address “100A Main St” the extra data is “A”,and in the ranged address “31-41 Main St” the extra data is “-41”.
+     * <code>String stdAddrPrimNumberFull</code> -	The combination of the house number,the descriptor,and the extra data. Using the previous examples,the full values would be “Km 12”,“4号”,“100A”,and “31-41”.
+	 *
+	 * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?1334e130a9c04a5e9f420e4a6bd90a8d.html
+	 */
+	String stdAddrPrimNumber = null;
+	String stdAddrPrimNumberDesc = null;
+	String stdAddrPrimNumberExtra = null;
+	String stdAddrPrimNumberFull = null;
+	
+	/*
+	 * Address Output Field: Street
+     * The following output fields include variations of street data.
+	 * Addresses in countries that have street addresses with only one level 
+	 * of street information,such as United States and Germany,will return the 
+	 * street name in the String stdAddrPrimName property,the street type such as street,
+	 * avenue,and road in the String stdAddrPrimType property,and the directional word 
+	 * such as north and southwest in the String stdAddrPrimPrefix or String stdAddrPrimPostfix 
+	 * property.
+	 * 
+	 * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?e8ad3bce96c84f21a6e9f35e4a97adb2.html
+	 */
+	String stdAddrPrimName = null;
+	String stdAddrPrimNameFull = null;
+	String stdAddrPrimName2 = null;
+	String stdAddrPrimName2Full = null;
+	String stdAddrPrimName3 = null;
+	String stdAddrPrimName3Full = null;
+	String stdAddrPrimName4 = null;
+	String stdAddrPrimName4Full = null;
+	String stdAddrPrimName1_2 = null;
+	String stdAddrPrimName3_4 = null;
+	String stdAddrPrimName1_4 = null;
+	String stdAddrPrimType = null;
+	String stdAddrPrimType2 = null;
+	String stdAddrPrimType3 = null;
+	String stdAddrPrimType4 = null;
+	String stdAddrPrimPrefix = null;
+	String stdAddrPrimPostfix = null;
+	
+	/*
+	 * Address Output Field: Extended Address
+     * The following output fields include extended address data.
+     * The String stdAddrPointOfRef and String stdAddrAreaName properties are often seen in 
+     * addresses in India but not in other countries. Examples of point of references are 
+     * “Behind Grand Hotel” and “Near Industrial Complex”,and examples of area names 
+     * are “HREC Industrial Area” and “Pramuri Industrial Estate”.
+     * The String stdAddrFirm property contains the organization name retrieved from the address 
+     * reference data. Be aware that the reference data may contain some unusual or shortened 
+     * spellings that may or may not be found suitable. It is not recommended that these 
+     * organization names are used except for very specific situations.
+     *  
+     *  @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?35dfab3b3dd74022986b4b9cf558bb55.html
+	 */
+	String stdAddrPointOfRef = null;
+	String stdAddrPointOfRef2 = null;
+	String stdAddrPointOfRef1_2 = null;
+	String stdAddrAreaName = null;
+	String stdAddrFirm = null;
+	
+	/*
+	 * Address Output Fields: Address
+	 * The following output fields include various forms of address data.
+	 * 
+	 * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?4b7c1d6d6a1f4143a9b38be21544ab51.html
+	 */
+	String stdAddrAddressDelivery = null;
+	String stdAddrAddressDual = null;
+	String stdAddrAddrDeldual = null;
+	String stdAddrAddrDeldualBldg = null;
+	String stdAddrPrimaddrDeldual = null;
+	String stdAddrPrimaddrDeldualBldg = null;
+	String stdAddrBuildingName = null;
+	String stdAddrBuildingName2 = null;
+	String stdAddrBuildingName1_2 = null;
+	String stdAddrPrimAddress = null;
+	String stdAddrSecAddress = null;
+	String stdAddrPnameSecaddr = null;
+	
+	/*
+	 * Address Output Field: Postcode
+	 * The following output fields include variations of postcode data.
+	 * 
+	 * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?b0447f116bb24b73afd9a2a87c021538.html
+     */
+	String stdAddrPostcodeFull = null;
+	String stdAddrPostcode1 = null;
+	String stdAddrPostcode2 = null;
+	String sapFormattedPostcode = null;
+	String sapInFmtPostcode = null;	 
+	
+	/*
+	 * Address Output Field: Region
+	 * The following output fields include variations of region (state,province,
+	 * territory,prefecture,etc.) and subregion (county,district,etc.) data.
+	 * 
+	 * @see http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?1ff518052ed044e79c6e9b802cb3cb22.html
+	 */
+	String stdAddrRegion = null;
+	String stdAddrRegionFull = null;
+	String stdAddrRegionCode = null;
+	String stdAddrRegion2 = null;
+	String stdAddrRegion2Code = null;
+	String stdAddrRegion1_2 = null;
+	String stdAddrRegion1_2Full = null;
+	
+	/*
+	 * Address Output Field: City
+     * The following output fields include variations of city and subcity data.
+	 * 
+	 * http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?884c807e6e8348a4baf972dd96572b94.html
+	 */
+	String stdAddrLocality = null;
+	String stdAddrLocalityDesc = null;
+	String stdAddrLocalityFull = null;
+	String stdAddrLocality2 = null;
+	String stdAddrLocality2Desc = null;
+	String stdAddrLocality2Full = null;
+	String stdAddrLocality3 = null;
+	String stdAddrLocality3Desc = null;
+	String stdAddrLocality3Full = null;
+	String stdAddrLocality4 = null;
+	String stdAddrLocality4Desc = null;
+	String stdAddrLocality4Full = null;
+	String stdAddrLocality1_4 = null;
+	String stdAddrLocality1_4Full = null;
+	String stdAddrLocality1_2 = null;
+	String stdAddrLocality1_2Full = null;
+	String stdAddrLocality3_4 = null;
+	String stdAddrLocality3_4Full = null;
+	String stdAddrLocality2_4 = null;
+	String stdAddrLocality2_4Full = null;
+	String stdAddrDelinstFull = null;
+	
+	/*
+	 * Address Output Field: Country
+	 * 
+	 * http://help.sap.com/saphelpiis_dqmmicro1/dqmMicroLoc_1DevEn/frameset.htm?7b7dc88389df401c8985b5ebdc6c8242.html
+	 */
+	String stdAddrCountryName = null;
+	String stdAddrCountry_2char = null;
+	String stdAddrCountry_3char = null;
+	String stdAddrCountry_3digit = null;
+	public String getStdAddrPoBoxCountry_2char()
+	{
+		return stdAddrPoBoxCountry_2char;
+	}
+	public void setStdAddrPoBoxCountry_2char(String stdAddrPoBoxCountry_2char)
+	{
+		this.stdAddrPoBoxCountry_2char = stdAddrPoBoxCountry_2char;
+	}
+	public String getStdAddrPoBoxLocalityFull()
+	{
+		return stdAddrPoBoxLocalityFull;
+	}
+	public void setStdAddrPoBoxLocalityFull(String stdAddrPoBoxLocalityFull)
+	{
+		this.stdAddrPoBoxLocalityFull = stdAddrPoBoxLocalityFull;
+	}
+	public String getStdAddrPoBoxDelinstFull()
+	{
+		return stdAddrPoBoxDelinstFull;
+	}
+	public void setStdAddrPoBoxDelinstFull(String stdAddrPoBoxDelinstFull)
+	{
+		this.stdAddrPoBoxDelinstFull = stdAddrPoBoxDelinstFull;
+	}
+	public String getStdAddrPoBoxRegion()
+	{
+		return stdAddrPoBoxRegion;
+	}
+	public void setStdAddrPoBoxRegion(String stdAddrPoBoxRegion)
+	{
+		this.stdAddrPoBoxRegion = stdAddrPoBoxRegion;
+	}
+	public String getStdAddrPoBoxRegionFull()
+	{
+		return stdAddrPoBoxRegionFull;
+	}
+	public void setStdAddrPoBoxRegionFull(String stdAddrPoBoxRegionFull)
+	{
+		this.stdAddrPoBoxRegionFull = stdAddrPoBoxRegionFull;
+	}
+	public String getStdAddrPoBoxRegionCode()
+	{
+		return stdAddrPoBoxRegionCode;
+	}
+	public void setStdAddrPoBoxRegionCode(String stdAddrPoBoxRegionCode)
+	{
+		this.stdAddrPoBoxRegionCode = stdAddrPoBoxRegionCode;
+	}
+	public String getStdAddrPoBoxRegion2()
+	{
+		return stdAddrPoBoxRegion2;
+	}
+	public void setStdAddrPoBoxRegion2(String stdAddrPoBoxRegion2)
+	{
+		this.stdAddrPoBoxRegion2 = stdAddrPoBoxRegion2;
+	}
+	public String getStdAddrPoBoxRegion2Full()
+	{
+		return stdAddrPoBoxRegion2Full;
+	}
+	public void setStdAddrPoBoxRegion2Full(String stdAddrPoBoxRegion2Full)
+	{
+		this.stdAddrPoBoxRegion2Full = stdAddrPoBoxRegion2Full;
+	}
+	public String getStdAddrPoBoxRegion2Code()
+	{
+		return stdAddrPoBoxRegion2Code;
+	}
+	public void setStdAddrPoBoxRegion2Code(String stdAddrPoBoxRegion2Code)
+	{
+		this.stdAddrPoBoxRegion2Code = stdAddrPoBoxRegion2Code;
+	}
+	public String getStdAddrPoBoxPostcodeFull()
+	{
+		return stdAddrPoBoxPostcodeFull;
+	}
+	public void setStdAddrPoBoxPostcodeFull(String stdAddrPoBoxPostcodeFull)
+	{
+		this.stdAddrPoBoxPostcodeFull = stdAddrPoBoxPostcodeFull;
+	}
+	public String getSapFormattedPoBoxPostcode()
+	{
+		return sapFormattedPoBoxPostcode;
+	}
+	public void setSapFormattedPoBoxPostcode(String sapFormattedPoBoxPostcode)
+	{
+		this.sapFormattedPoBoxPostcode = sapFormattedPoBoxPostcode;
+	}
+	public String getSapInFmtPoBoxPostcode()
+	{
+		return sapInFmtPoBoxPostcode;
+	}
+	public void setSapInFmtPoBoxPostcode(String sapInFmtPoBoxPostcode)
+	{
+		this.sapInFmtPoBoxPostcode = sapInFmtPoBoxPostcode;
+	}
+	public String getStdAddrPoBoxNumber()
+	{
+		return stdAddrPoBoxNumber;
+	}
+	public void setStdAddrPoBoxNumber(String stdAddrPoBoxNumber)
+	{
+		this.stdAddrPoBoxNumber = stdAddrPoBoxNumber;
+	}
+	public String getStdAddrPoBoxFull()
+	{
+		return stdAddrPoBoxFull;
+	}
+	public void setStdAddrPoBoxFull(String stdAddrPoBoxFull)
+	{
+		this.stdAddrPoBoxFull = stdAddrPoBoxFull;
+	}
+	public String getAddrPoBoxInfoCode()
+	{
+		return addrPoBoxInfoCode;
+	}
+	public void setAddrPoBoxInfoCode(String addrPoBoxInfoCode)
+	{
+		this.addrPoBoxInfoCode = addrPoBoxInfoCode;
+	}
+	public String getAddrPoBoxInfoCodeMsg()
+	{
+		return addrPoBoxInfoCodeMsg;
+	}
+	public void setAddrPoBoxInfoCodeMsg(String addrPoBoxInfoCodeMsg)
+	{
+		this.addrPoBoxInfoCodeMsg = addrPoBoxInfoCodeMsg;
+	}
+	public String getAddrPoBoxAsmtInfo()
+	{
+		return addrPoBoxAsmtInfo;
+	}
+	public void setAddrPoBoxAsmtInfo(String addrPoBoxAsmtInfo)
+	{
+		this.addrPoBoxAsmtInfo = addrPoBoxAsmtInfo;
+	}
+	public String getAddrPoBoxAsmtType()
+	{
+		return addrPoBoxAsmtType;
+	}
+	public void setAddrPoBoxAsmtType(String addrPoBoxAsmtType)
+	{
+		this.addrPoBoxAsmtType = addrPoBoxAsmtType;
+	}
+	public String getAddrPoBoxAsmtLevel()
+	{
+		return addrPoBoxAsmtLevel;
+	}
+	public void setAddrPoBoxAsmtLevel(String addrPoBoxAsmtLevel)
+	{
+		this.addrPoBoxAsmtLevel = addrPoBoxAsmtLevel;
+	}
+	public String getAddrLatitude()
+	{
+		return addrLatitude;
+	}
+	public void setAddrLatitude(String addrLatitude)
+	{
+		this.addrLatitude = addrLatitude;
+	}
+	public String getAddrLongitude()
+	{
+		return addrLongitude;
+	}
+	public void setAddrLongitude(String addrLongitude)
+	{
+		this.addrLongitude = addrLongitude;
+	}
+	public String getGeoAsmtLevel()
+	{
+		return geoAsmtLevel;
+	}
+	public void setGeoAsmtLevel(String geoAsmtLevel)
+	{
+		this.geoAsmtLevel = geoAsmtLevel;
+	}
+	public String getGeoInfoCode()
+	{
+		return geoInfoCode;
+	}
+	public void setGeoInfoCode(String geoInfoCode)
+	{
+		this.geoInfoCode = geoInfoCode;
+	}
+	public String getGeoInfoCodeMsg()
+	{
+		return geoInfoCodeMsg;
+	}
+	public void setGeoInfoCodeMsg(String geoInfoCodeMsg)
+	{
+		this.geoInfoCodeMsg = geoInfoCodeMsg;
+	}
+	public String getAddrInfoCode()
+	{
+		return addrInfoCode;
+	}
+	public void setAddrInfoCode(String addrInfoCode)
+	{
+		this.addrInfoCode = addrInfoCode;
+	}
+	public String getAddrInfoCodeMsg()
+	{
+		return addrInfoCodeMsg;
+	}
+	public void setAddrInfoCodeMsg(String addrInfoCodeMsg)
+	{
+		this.addrInfoCodeMsg = addrInfoCodeMsg;
+	}
+	public String getAddrAsmtInfo()
+	{
+		return addrAsmtInfo;
+	}
+	public void setAddrAsmtInfo(String addrAsmtInfo)
+	{
+		this.addrAsmtInfo = addrAsmtInfo;
+	}
+	public String getAddrAsmtType()
+	{
+		return addrAsmtType;
+	}
+	public void setAddrAsmtType(String addrAsmtType)
+	{
+		this.addrAsmtType = addrAsmtType;
+	}
+	public String getAddrAsmtLevel()
+	{
+		return addrAsmtLevel;
+	}
+	public void setAddrAsmtLevel(String addrAsmtLevel)
+	{
+		this.addrAsmtLevel = addrAsmtLevel;
+	}
+	public String getAddrChangeSig()
+	{
+		return addrChangeSig;
+	}
+	public void setAddrChangeSig(String addrChangeSig)
+	{
+		this.addrChangeSig = addrChangeSig;
+	}
+	public String getAddrLanguage()
+	{
+		return addrLanguage;
+	}
+	public void setAddrLanguage(String addrLanguage)
+	{
+		this.addrLanguage = addrLanguage;
+	}
+	public String getAddrAddressRem()
+	{
+		return addrAddressRem;
+	}
+	public void setAddrAddressRem(String addrAddressRem)
+	{
+		this.addrAddressRem = addrAddressRem;
+	}
+	public String getAddrAddressRem2()
+	{
+		return addrAddressRem2;
+	}
+	public void setAddrAddressRem2(String addrAddressRem2)
+	{
+		this.addrAddressRem2 = addrAddressRem2;
+	}
+	public String getAddrAddressRem3()
+	{
+		return addrAddressRem3;
+	}
+	public void setAddrAddressRem3(String addrAddressRem3)
+	{
+		this.addrAddressRem3 = addrAddressRem3;
+	}
+	public String getAddrAddressRem4()
+	{
+		return addrAddressRem4;
+	}
+	public void setAddrAddressRem4(String addrAddressRem4)
+	{
+		this.addrAddressRem4 = addrAddressRem4;
+	}
+	public String getAddrRemainderFull()
+	{
+		return addrRemainderFull;
+	}
+	public void setAddrRemainderFull(String addrRemainderFull)
+	{
+		this.addrRemainderFull = addrRemainderFull;
+	}
+	public String getAddrExtra()
+	{
+		return addrExtra;
+	}
+	public void setAddrExtra(String addrExtra)
+	{
+		this.addrExtra = addrExtra;
+	}
+	public String getAddrExtra2()
+	{
+		return addrExtra2;
+	}
+	public void setAddrExtra2(String addrExtra2)
+	{
+		this.addrExtra2 = addrExtra2;
+	}
+	public String getAddrExtra3()
+	{
+		return addrExtra3;
+	}
+	public void setAddrExtra3(String addrExtra3)
+	{
+		this.addrExtra3 = addrExtra3;
+	}
+	public String getAddrExtra4()
+	{
+		return addrExtra4;
+	}
+	public void setAddrExtra4(String addrExtra4)
+	{
+		this.addrExtra4 = addrExtra4;
+	}
+	public String getAddrRemainderExtraPmbFull()
+	{
+		return addrRemainderExtraPmbFull;
+	}
+	public void setAddrRemainderExtraPmbFull(String addrRemainderExtraPmbFull)
+	{
+		this.addrRemainderExtraPmbFull = addrRemainderExtraPmbFull;
+	}
+	public String getStdAddrAdditionalInfo()
+	{
+		return stdAddrAdditionalInfo;
+	}
+	public void setStdAddrAdditionalInfo(String stdAddrAdditionalInfo)
+	{
+		this.stdAddrAdditionalInfo = stdAddrAdditionalInfo;
+	}
+	public String getStdAddrAdditionalInfo2()
+	{
+		return stdAddrAdditionalInfo2;
+	}
+	public void setStdAddrAdditionalInfo2(String stdAddrAdditionalInfo2)
+	{
+		this.stdAddrAdditionalInfo2 = stdAddrAdditionalInfo2;
+	}
+	public String getStdAddrAdditionalInfo3()
+	{
+		return stdAddrAdditionalInfo3;
+	}
+	public void setStdAddrAdditionalInfo3(String stdAddrAdditionalInfo3)
+	{
+		this.stdAddrAdditionalInfo3 = stdAddrAdditionalInfo3;
+	}
+	public String getStdAddrAdditionalInfo4()
+	{
+		return stdAddrAdditionalInfo4;
+	}
+	public void setStdAddrAdditionalInfo4(String stdAddrAdditionalInfo4)
+	{
+		this.stdAddrAdditionalInfo4 = stdAddrAdditionalInfo4;
+	}
+	public String getStdAddrAdditionalInfo5()
+	{
+		return stdAddrAdditionalInfo5;
+	}
+	public void setStdAddrAdditionalInfo5(String stdAddrAdditionalInfo5)
+	{
+		this.stdAddrAdditionalInfo5 = stdAddrAdditionalInfo5;
+	}
+	public String getStdAddrAdditionalInfo6()
+	{
+		return stdAddrAdditionalInfo6;
+	}
+	public void setStdAddrAdditionalInfo6(String stdAddrAdditionalInfo6)
+	{
+		this.stdAddrAdditionalInfo6 = stdAddrAdditionalInfo6;
+	}
+	public String getStdAddrSingleAddress()
+	{
+		return stdAddrSingleAddress;
+	}
+	public void setStdAddrSingleAddress(String stdAddrSingleAddress)
+	{
+		this.stdAddrSingleAddress = stdAddrSingleAddress;
+	}
+	public String getStdAddrFullAddress()
+	{
+		return stdAddrFullAddress;
+	}
+	public void setStdAddrFullAddress(String stdAddrFullAddress)
+	{
+		this.stdAddrFullAddress = stdAddrFullAddress;
+	}
+	public String getStdAddrLastline()
+	{
+		return stdAddrLastline;
+	}
+	public void setStdAddrLastline(String stdAddrLastline)
+	{
+		this.stdAddrLastline = stdAddrLastline;
+	}
+	public String getStdAddrBlockNumber()
+	{
+		return stdAddrBlockNumber;
+	}
+	public void setStdAddrBlockNumber(String stdAddrBlockNumber)
+	{
+		this.stdAddrBlockNumber = stdAddrBlockNumber;
+	}
+	public String getStdAddrBlockDesc()
+	{
+		return stdAddrBlockDesc;
+	}
+	public void setStdAddrBlockDesc(String stdAddrBlockDesc)
+	{
+		this.stdAddrBlockDesc = stdAddrBlockDesc;
+	}
+	public String getStdAddrBlockFull()
+	{
+		return stdAddrBlockFull;
+	}
+	public void setStdAddrBlockFull(String stdAddrBlockFull)
+	{
+		this.stdAddrBlockFull = stdAddrBlockFull;
+	}
+	public String getStdAddrWingName()
+	{
+		return stdAddrWingName;
+	}
+	public void setStdAddrWingName(String stdAddrWingName)
+	{
+		this.stdAddrWingName = stdAddrWingName;
+	}
+	public String getStdAddrWingDesc()
+	{
+		return stdAddrWingDesc;
+	}
+	public void setStdAddrWingDesc(String stdAddrWingDesc)
+	{
+		this.stdAddrWingDesc = stdAddrWingDesc;
+	}
+	public String getStdAddrWingFull()
+	{
+		return stdAddrWingFull;
+	}
+	public void setStdAddrWingFull(String stdAddrWingFull)
+	{
+		this.stdAddrWingFull = stdAddrWingFull;
+	}
+	public String getStdAddrStairwellName()
+	{
+		return stdAddrStairwellName;
+	}
+	public void setStdAddrStairwellName(String stdAddrStairwellName)
+	{
+		this.stdAddrStairwellName = stdAddrStairwellName;
+	}
+	public String getStdAddrStairwellDesc()
+	{
+		return stdAddrStairwellDesc;
+	}
+	public void setStdAddrStairwellDesc(String stdAddrStairwellDesc)
+	{
+		this.stdAddrStairwellDesc = stdAddrStairwellDesc;
+	}
+	public String getStdAddrStairwellFull()
+	{
+		return stdAddrStairwellFull;
+	}
+	public void setStdAddrStairwellFull(String stdAddrStairwellFull)
+	{
+		this.stdAddrStairwellFull = stdAddrStairwellFull;
+	}
+	public String getStdAddrFloorNumber()
+	{
+		return stdAddrFloorNumber;
+	}
+	public void setStdAddrFloorNumber(String stdAddrFloorNumber)
+	{
+		this.stdAddrFloorNumber = stdAddrFloorNumber;
+	}
+	public String getStdAddrFloorDesc()
+	{
+		return stdAddrFloorDesc;
+	}
+	public void setStdAddrFloorDesc(String stdAddrFloorDesc)
+	{
+		this.stdAddrFloorDesc = stdAddrFloorDesc;
+	}
+	public String getStdAddrFloorQual()
+	{
+		return stdAddrFloorQual;
+	}
+	public void setStdAddrFloorQual(String stdAddrFloorQual)
+	{
+		this.stdAddrFloorQual = stdAddrFloorQual;
+	}
+	public String getStdAddrFloorFull()
+	{
+		return stdAddrFloorFull;
+	}
+	public void setStdAddrFloorFull(String stdAddrFloorFull)
+	{
+		this.stdAddrFloorFull = stdAddrFloorFull;
+	}
+	public String getStdAddrUnitNumber()
+	{
+		return stdAddrUnitNumber;
+	}
+	public void setStdAddrUnitNumber(String stdAddrUnitNumber)
+	{
+		this.stdAddrUnitNumber = stdAddrUnitNumber;
+	}
+	public String getStdAddrUnitDesc()
+	{
+		return stdAddrUnitDesc;
+	}
+	public void setStdAddrUnitDesc(String stdAddrUnitDesc)
+	{
+		this.stdAddrUnitDesc = stdAddrUnitDesc;
+	}
+	public String getStdAddrUnitQual()
+	{
+		return stdAddrUnitQual;
+	}
+	public void setStdAddrUnitQual(String stdAddrUnitQual)
+	{
+		this.stdAddrUnitQual = stdAddrUnitQual;
+	}
+	public String getStdAddrUnitFull()
+	{
+		return stdAddrUnitFull;
+	}
+	public void setStdAddrUnitFull(String stdAddrUnitFull)
+	{
+		this.stdAddrUnitFull = stdAddrUnitFull;
+	}
+	public String getStdAddrRoomNumber()
+	{
+		return stdAddrRoomNumber;
+	}
+	public void setStdAddrRoomNumber(String stdAddrRoomNumber)
+	{
+		this.stdAddrRoomNumber = stdAddrRoomNumber;
+	}
+	public String getStdAddrRoomFull()
+	{
+		return stdAddrRoomFull;
+	}
+	public void setStdAddrRoomFull(String stdAddrRoomFull)
+	{
+		this.stdAddrRoomFull = stdAddrRoomFull;
+	}
+	public String getStdAddrPmbFull()
+	{
+		return stdAddrPmbFull;
+	}
+	public void setStdAddrPmbFull(String stdAddrPmbFull)
+	{
+		this.stdAddrPmbFull = stdAddrPmbFull;
+	}
+	public String getStdAddrSecaddrNoRoom()
+	{
+		return stdAddrSecaddrNoRoom;
+	}
+	public void setStdAddrSecaddrNoRoom(String stdAddrSecaddrNoRoom)
+	{
+		this.stdAddrSecaddrNoRoom = stdAddrSecaddrNoRoom;
+	}
+	public String getStdAddrSecaddrNoFloor()
+	{
+		return stdAddrSecaddrNoFloor;
+	}
+	public void setStdAddrSecaddrNoFloor(String stdAddrSecaddrNoFloor)
+	{
+		this.stdAddrSecaddrNoFloor = stdAddrSecaddrNoFloor;
+	}
+	public String getStdAddrSecaddrNoFloorRoom()
+	{
+		return stdAddrSecaddrNoFloorRoom;
+	}
+	public void setStdAddrSecaddrNoFloorRoom(String stdAddrSecaddrNoFloorRoom)
+	{
+		this.stdAddrSecaddrNoFloorRoom = stdAddrSecaddrNoFloorRoom;
+	}
+	public String getStdAddrPrimNumber()
+	{
+		return stdAddrPrimNumber;
+	}
+	public void setStdAddrPrimNumber(String stdAddrPrimNumber)
+	{
+		this.stdAddrPrimNumber = stdAddrPrimNumber;
+	}
+	public String getStdAddrPrimNumberDesc()
+	{
+		return stdAddrPrimNumberDesc;
+	}
+	public void setStdAddrPrimNumberDesc(String stdAddrPrimNumberDesc)
+	{
+		this.stdAddrPrimNumberDesc = stdAddrPrimNumberDesc;
+	}
+	public String getStdAddrPrimNumberExtra()
+	{
+		return stdAddrPrimNumberExtra;
+	}
+	public void setStdAddrPrimNumberExtra(String stdAddrPrimNumberExtra)
+	{
+		this.stdAddrPrimNumberExtra = stdAddrPrimNumberExtra;
+	}
+	public String getStdAddrPrimNumberFull()
+	{
+		return stdAddrPrimNumberFull;
+	}
+	public void setStdAddrPrimNumberFull(String stdAddrPrimNumberFull)
+	{
+		this.stdAddrPrimNumberFull = stdAddrPrimNumberFull;
+	}
+	public String getStdAddrPrimName()
+	{
+		return stdAddrPrimName;
+	}
+	public void setStdAddrPrimName(String stdAddrPrimName)
+	{
+		this.stdAddrPrimName = stdAddrPrimName;
+	}
+	public String getStdAddrPrimNameFull()
+	{
+		return stdAddrPrimNameFull;
+	}
+	public void setStdAddrPrimNameFull(String stdAddrPrimNameFull)
+	{
+		this.stdAddrPrimNameFull = stdAddrPrimNameFull;
+	}
+	public String getStdAddrPrimName2()
+	{
+		return stdAddrPrimName2;
+	}
+	public void setStdAddrPrimName2(String stdAddrPrimName2)
+	{
+		this.stdAddrPrimName2 = stdAddrPrimName2;
+	}
+	public String getStdAddrPrimName2Full()
+	{
+		return stdAddrPrimName2Full;
+	}
+	public void setStdAddrPrimName2Full(String stdAddrPrimName2Full)
+	{
+		this.stdAddrPrimName2Full = stdAddrPrimName2Full;
+	}
+	public String getStdAddrPrimName3()
+	{
+		return stdAddrPrimName3;
+	}
+	public void setStdAddrPrimName3(String stdAddrPrimName3)
+	{
+		this.stdAddrPrimName3 = stdAddrPrimName3;
+	}
+	public String getStdAddrPrimName3Full()
+	{
+		return stdAddrPrimName3Full;
+	}
+	public void setStdAddrPrimName3Full(String stdAddrPrimName3Full)
+	{
+		this.stdAddrPrimName3Full = stdAddrPrimName3Full;
+	}
+	public String getStdAddrPrimName4()
+	{
+		return stdAddrPrimName4;
+	}
+	public void setStdAddrPrimName4(String stdAddrPrimName4)
+	{
+		this.stdAddrPrimName4 = stdAddrPrimName4;
+	}
+	public String getStdAddrPrimName4Full()
+	{
+		return stdAddrPrimName4Full;
+	}
+	public void setStdAddrPrimName4Full(String stdAddrPrimName4Full)
+	{
+		this.stdAddrPrimName4Full = stdAddrPrimName4Full;
+	}
+	public String getStdAddrPrimName1_2()
+	{
+		return stdAddrPrimName1_2;
+	}
+	public void setStdAddrPrimName1_2(String stdAddrPrimName1_2)
+	{
+		this.stdAddrPrimName1_2 = stdAddrPrimName1_2;
+	}
+	public String getStdAddrPrimName3_4()
+	{
+		return stdAddrPrimName3_4;
+	}
+	public void setStdAddrPrimName3_4(String stdAddrPrimName3_4)
+	{
+		this.stdAddrPrimName3_4 = stdAddrPrimName3_4;
+	}
+	public String getStdAddrPrimName1_4()
+	{
+		return stdAddrPrimName1_4;
+	}
+	public void setStdAddrPrimName1_4(String stdAddrPrimName1_4)
+	{
+		this.stdAddrPrimName1_4 = stdAddrPrimName1_4;
+	}
+	public String getStdAddrPrimType()
+	{
+		return stdAddrPrimType;
+	}
+	public void setStdAddrPrimType(String stdAddrPrimType)
+	{
+		this.stdAddrPrimType = stdAddrPrimType;
+	}
+	public String getStdAddrPrimType2()
+	{
+		return stdAddrPrimType2;
+	}
+	public void setStdAddrPrimType2(String stdAddrPrimType2)
+	{
+		this.stdAddrPrimType2 = stdAddrPrimType2;
+	}
+	public String getStdAddrPrimType3()
+	{
+		return stdAddrPrimType3;
+	}
+	public void setStdAddrPrimType3(String stdAddrPrimType3)
+	{
+		this.stdAddrPrimType3 = stdAddrPrimType3;
+	}
+	public String getStdAddrPrimType4()
+	{
+		return stdAddrPrimType4;
+	}
+	public void setStdAddrPrimType4(String stdAddrPrimType4)
+	{
+		this.stdAddrPrimType4 = stdAddrPrimType4;
+	}
+	public String getStdAddrPrimPrefix()
+	{
+		return stdAddrPrimPrefix;
+	}
+	public void setStdAddrPrimPrefix(String stdAddrPrimPrefix)
+	{
+		this.stdAddrPrimPrefix = stdAddrPrimPrefix;
+	}
+	public String getStdAddrPrimPostfix()
+	{
+		return stdAddrPrimPostfix;
+	}
+	public void setStdAddrPrimPostfix(String stdAddrPrimPostfix)
+	{
+		this.stdAddrPrimPostfix = stdAddrPrimPostfix;
+	}
+	public String getStdAddrPointOfRef()
+	{
+		return stdAddrPointOfRef;
+	}
+	public void setStdAddrPointOfRef(String stdAddrPointOfRef)
+	{
+		this.stdAddrPointOfRef = stdAddrPointOfRef;
+	}
+	public String getStdAddrPointOfRef2()
+	{
+		return stdAddrPointOfRef2;
+	}
+	public void setStdAddrPointOfRef2(String stdAddrPointOfRef2)
+	{
+		this.stdAddrPointOfRef2 = stdAddrPointOfRef2;
+	}
+	public String getStdAddrPointOfRef1_2()
+	{
+		return stdAddrPointOfRef1_2;
+	}
+	public void setStdAddrPointOfRef1_2(String stdAddrPointOfRef1_2)
+	{
+		this.stdAddrPointOfRef1_2 = stdAddrPointOfRef1_2;
+	}
+	public String getStdAddrAreaName()
+	{
+		return stdAddrAreaName;
+	}
+	public void setStdAddrAreaName(String stdAddrAreaName)
+	{
+		this.stdAddrAreaName = stdAddrAreaName;
+	}
+	public String getStdAddrFirm()
+	{
+		return stdAddrFirm;
+	}
+	public void setStdAddrFirm(String stdAddrFirm)
+	{
+		this.stdAddrFirm = stdAddrFirm;
+	}
+	public String getStdAddrAddressDelivery()
+	{
+		return stdAddrAddressDelivery;
+	}
+	public void setStdAddrAddressDelivery(String stdAddrAddressDelivery)
+	{
+		this.stdAddrAddressDelivery = stdAddrAddressDelivery;
+	}
+	public String getStdAddrAddressDual()
+	{
+		return stdAddrAddressDual;
+	}
+	public void setStdAddrAddressDual(String stdAddrAddressDual)
+	{
+		this.stdAddrAddressDual = stdAddrAddressDual;
+	}
+	public String getStdAddrAddrDeldual()
+	{
+		return stdAddrAddrDeldual;
+	}
+	public void setStdAddrAddrDeldual(String stdAddrAddrDeldual)
+	{
+		this.stdAddrAddrDeldual = stdAddrAddrDeldual;
+	}
+	public String getStdAddrAddrDeldualBldg()
+	{
+		return stdAddrAddrDeldualBldg;
+	}
+	public void setStdAddrAddrDeldualBldg(String stdAddrAddrDeldualBldg)
+	{
+		this.stdAddrAddrDeldualBldg = stdAddrAddrDeldualBldg;
+	}
+	public String getStdAddrPrimaddrDeldual()
+	{
+		return stdAddrPrimaddrDeldual;
+	}
+	public void setStdAddrPrimaddrDeldual(String stdAddrPrimaddrDeldual)
+	{
+		this.stdAddrPrimaddrDeldual = stdAddrPrimaddrDeldual;
+	}
+	public String getStdAddrPrimaddrDeldualBldg()
+	{
+		return stdAddrPrimaddrDeldualBldg;
+	}
+	public void setStdAddrPrimaddrDeldualBldg(String stdAddrPrimaddrDeldualBldg)
+	{
+		this.stdAddrPrimaddrDeldualBldg = stdAddrPrimaddrDeldualBldg;
+	}
+	public String getStdAddrBuildingName()
+	{
+		return stdAddrBuildingName;
+	}
+	public void setStdAddrBuildingName(String stdAddrBuildingName)
+	{
+		this.stdAddrBuildingName = stdAddrBuildingName;
+	}
+	public String getStdAddrBuildingName2()
+	{
+		return stdAddrBuildingName2;
+	}
+	public void setStdAddrBuildingName2(String stdAddrBuildingName2)
+	{
+		this.stdAddrBuildingName2 = stdAddrBuildingName2;
+	}
+	public String getStdAddrBuildingName1_2()
+	{
+		return stdAddrBuildingName1_2;
+	}
+	public void setStdAddrBuildingName1_2(String stdAddrBuildingName1_2)
+	{
+		this.stdAddrBuildingName1_2 = stdAddrBuildingName1_2;
+	}
+	public String getStdAddrPrimAddress()
+	{
+		return stdAddrPrimAddress;
+	}
+	public void setStdAddrPrimAddress(String stdAddrPrimAddress)
+	{
+		this.stdAddrPrimAddress = stdAddrPrimAddress;
+	}
+	public String getStdAddrSecAddress()
+	{
+		return stdAddrSecAddress;
+	}
+	public void setStdAddrSecAddress(String stdAddrSecAddress)
+	{
+		this.stdAddrSecAddress = stdAddrSecAddress;
+	}
+	public String getStdAddrPnameSecaddr()
+	{
+		return stdAddrPnameSecaddr;
+	}
+	public void setStdAddrPnameSecaddr(String stdAddrPnameSecaddr)
+	{
+		this.stdAddrPnameSecaddr = stdAddrPnameSecaddr;
+	}
+	public String getStdAddrPostcodeFull()
+	{
+		return stdAddrPostcodeFull;
+	}
+	public void setStdAddrPostcodeFull(String stdAddrPostcodeFull)
+	{
+		this.stdAddrPostcodeFull = stdAddrPostcodeFull;
+	}
+	public String getStdAddrPostcode1()
+	{
+		return stdAddrPostcode1;
+	}
+	public void setStdAddrPostcode1(String stdAddrPostcode1)
+	{
+		this.stdAddrPostcode1 = stdAddrPostcode1;
+	}
+	public String getStdAddrPostcode2()
+	{
+		return stdAddrPostcode2;
+	}
+	public void setStdAddrPostcode2(String stdAddrPostcode2)
+	{
+		this.stdAddrPostcode2 = stdAddrPostcode2;
+	}
+	public String getSapFormattedPostcode()
+	{
+		return sapFormattedPostcode;
+	}
+	public void setSapFormattedPostcode(String sapFormattedPostcode)
+	{
+		this.sapFormattedPostcode = sapFormattedPostcode;
+	}
+	public String getSapInFmtPostcode()
+	{
+		return sapInFmtPostcode;
+	}
+	public void setSapInFmtPostcode(String sapInFmtPostcode)
+	{
+		this.sapInFmtPostcode = sapInFmtPostcode;
+	}
+	public String getStdAddrRegion()
+	{
+		return stdAddrRegion;
+	}
+	public void setStdAddrRegion(String stdAddrRegion)
+	{
+		this.stdAddrRegion = stdAddrRegion;
+	}
+	public String getStdAddrRegionFull()
+	{
+		return stdAddrRegionFull;
+	}
+	public void setStdAddrRegionFull(String stdAddrRegionFull)
+	{
+		this.stdAddrRegionFull = stdAddrRegionFull;
+	}
+	public String getStdAddrRegionCode()
+	{
+		return stdAddrRegionCode;
+	}
+	public void setStdAddrRegionCode(String stdAddrRegionCode)
+	{
+		this.stdAddrRegionCode = stdAddrRegionCode;
+	}
+	public String getStdAddrRegion2()
+	{
+		return stdAddrRegion2;
+	}
+	public void setStdAddrRegion2(String stdAddrRegion2)
+	{
+		this.stdAddrRegion2 = stdAddrRegion2;
+	}
+	public String getStdAddrRegion2Code()
+	{
+		return stdAddrRegion2Code;
+	}
+	public void setStdAddrRegion2Code(String stdAddrRegion2Code)
+	{
+		this.stdAddrRegion2Code = stdAddrRegion2Code;
+	}
+	public String getStdAddrRegion1_2()
+	{
+		return stdAddrRegion1_2;
+	}
+	public void setStdAddrRegion1_2(String stdAddrRegion1_2)
+	{
+		this.stdAddrRegion1_2 = stdAddrRegion1_2;
+	}
+	public String getStdAddrRegion1_2Full()
+	{
+		return stdAddrRegion1_2Full;
+	}
+	public void setStdAddrRegion1_2Full(String stdAddrRegion1_2Full)
+	{
+		this.stdAddrRegion1_2Full = stdAddrRegion1_2Full;
+	}
+	public String getStdAddrLocality()
+	{
+		return stdAddrLocality;
+	}
+	public void setStdAddrLocality(String stdAddrLocality)
+	{
+		this.stdAddrLocality = stdAddrLocality;
+	}
+	public String getStdAddrLocalityDesc()
+	{
+		return stdAddrLocalityDesc;
+	}
+	public void setStdAddrLocalityDesc(String stdAddrLocalityDesc)
+	{
+		this.stdAddrLocalityDesc = stdAddrLocalityDesc;
+	}
+	public String getStdAddrLocalityFull()
+	{
+		return stdAddrLocalityFull;
+	}
+	public void setStdAddrLocalityFull(String stdAddrLocalityFull)
+	{
+		this.stdAddrLocalityFull = stdAddrLocalityFull;
+	}
+	public String getStdAddrLocality2()
+	{
+		return stdAddrLocality2;
+	}
+	public void setStdAddrLocality2(String stdAddrLocality2)
+	{
+		this.stdAddrLocality2 = stdAddrLocality2;
+	}
+	public String getStdAddrLocality2Desc()
+	{
+		return stdAddrLocality2Desc;
+	}
+	public void setStdAddrLocality2Desc(String stdAddrLocality2Desc)
+	{
+		this.stdAddrLocality2Desc = stdAddrLocality2Desc;
+	}
+	public String getStdAddrLocality2Full()
+	{
+		return stdAddrLocality2Full;
+	}
+	public void setStdAddrLocality2Full(String stdAddrLocality2Full)
+	{
+		this.stdAddrLocality2Full = stdAddrLocality2Full;
+	}
+	public String getStdAddrLocality3()
+	{
+		return stdAddrLocality3;
+	}
+	public void setStdAddrLocality3(String stdAddrLocality3)
+	{
+		this.stdAddrLocality3 = stdAddrLocality3;
+	}
+	public String getStdAddrLocality3Desc()
+	{
+		return stdAddrLocality3Desc;
+	}
+	public void setStdAddrLocality3Desc(String stdAddrLocality3Desc)
+	{
+		this.stdAddrLocality3Desc = stdAddrLocality3Desc;
+	}
+	public String getStdAddrLocality3Full()
+	{
+		return stdAddrLocality3Full;
+	}
+	public void setStdAddrLocality3Full(String stdAddrLocality3Full)
+	{
+		this.stdAddrLocality3Full = stdAddrLocality3Full;
+	}
+	public String getStdAddrLocality4()
+	{
+		return stdAddrLocality4;
+	}
+	public void setStdAddrLocality4(String stdAddrLocality4)
+	{
+		this.stdAddrLocality4 = stdAddrLocality4;
+	}
+	public String getStdAddrLocality4Desc()
+	{
+		return stdAddrLocality4Desc;
+	}
+	public void setStdAddrLocality4Desc(String stdAddrLocality4Desc)
+	{
+		this.stdAddrLocality4Desc = stdAddrLocality4Desc;
+	}
+	public String getStdAddrLocality4Full()
+	{
+		return stdAddrLocality4Full;
+	}
+	public void setStdAddrLocality4Full(String stdAddrLocality4Full)
+	{
+		this.stdAddrLocality4Full = stdAddrLocality4Full;
+	}
+	public String getStdAddrLocality1_4()
+	{
+		return stdAddrLocality1_4;
+	}
+	public void setStdAddrLocality1_4(String stdAddrLocality1_4)
+	{
+		this.stdAddrLocality1_4 = stdAddrLocality1_4;
+	}
+	public String getStdAddrLocality1_4Full()
+	{
+		return stdAddrLocality1_4Full;
+	}
+	public void setStdAddrLocality1_4Full(String stdAddrLocality1_4Full)
+	{
+		this.stdAddrLocality1_4Full = stdAddrLocality1_4Full;
+	}
+	public String getStdAddrLocality1_2()
+	{
+		return stdAddrLocality1_2;
+	}
+	public void setStdAddrLocality1_2(String stdAddrLocality1_2)
+	{
+		this.stdAddrLocality1_2 = stdAddrLocality1_2;
+	}
+	public String getStdAddrLocality1_2Full()
+	{
+		return stdAddrLocality1_2Full;
+	}
+	public void setStdAddrLocality1_2Full(String stdAddrLocality1_2Full)
+	{
+		this.stdAddrLocality1_2Full = stdAddrLocality1_2Full;
+	}
+	public String getStdAddrLocality3_4()
+	{
+		return stdAddrLocality3_4;
+	}
+	public void setStdAddrLocality3_4(String stdAddrLocality3_4)
+	{
+		this.stdAddrLocality3_4 = stdAddrLocality3_4;
+	}
+	public String getStdAddrLocality3_4Full()
+	{
+		return stdAddrLocality3_4Full;
+	}
+	public void setStdAddrLocality3_4Full(String stdAddrLocality3_4Full)
+	{
+		this.stdAddrLocality3_4Full = stdAddrLocality3_4Full;
+	}
+	public String getStdAddrLocality2_4()
+	{
+		return stdAddrLocality2_4;
+	}
+	public void setStdAddrLocality2_4(String stdAddrLocality2_4)
+	{
+		this.stdAddrLocality2_4 = stdAddrLocality2_4;
+	}
+	public String getStdAddrLocality2_4Full()
+	{
+		return stdAddrLocality2_4Full;
+	}
+	public void setStdAddrLocality2_4Full(String stdAddrLocality2_4Full)
+	{
+		this.stdAddrLocality2_4Full = stdAddrLocality2_4Full;
+	}
+	public String getStdAddrDelinstFull()
+	{
+		return stdAddrDelinstFull;
+	}
+	public void setStdAddrDelinstFull(String stdAddrDelinstFull)
+	{
+		this.stdAddrDelinstFull = stdAddrDelinstFull;
+	}
+	public String getStdAddrCountryName()
+	{
+		return stdAddrCountryName;
+	}
+	public void setStdAddrCountryName(String stdAddrCountryName)
+	{
+		this.stdAddrCountryName = stdAddrCountryName;
+	}
+	public String getStdAddrCountry_2char()
+	{
+		return stdAddrCountry_2char;
+	}
+	public void setStdAddrCountry_2char(String stdAddrCountry_2char)
+	{
+		this.stdAddrCountry_2char = stdAddrCountry_2char;
+	}
+	public String getStdAddrCountry_3char()
+	{
+		return stdAddrCountry_3char;
+	}
+	public void setStdAddrCountry_3char(String stdAddrCountry_3char)
+	{
+		this.stdAddrCountry_3char = stdAddrCountry_3char;
+	}
+	public String getStdAddrCountry_3digit()
+	{
+		return stdAddrCountry_3digit;
+	}
+	public void setStdAddrCountry_3digit(String stdAddrCountry_3digit)
+	{
+		this.stdAddrCountry_3digit = stdAddrCountry_3digit;
+	}
+	
+}

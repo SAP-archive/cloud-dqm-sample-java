@@ -16,6 +16,7 @@
 		<javax.ws.rs.jsr311-api-version>1.1.1</javax.ws.rs.jsr311-api-version>
 		<org.slf4j-version>1.7.13</org.slf4j-version>
 		<log4j-version>1.2.16</log4j-version>
+		<com.webcohesion.enunciate-version>2.5.0</com.webcohesion.enunciate-version>
   		
   	</properties>
 
@@ -176,6 +177,13 @@
           <version>${org.apache.cxf-version}</version>
         </dependency>
         
+        <!-- enunciate (REST API documentation tool) -->
+		<dependency>
+	      	<groupId>com.webcohesion.enunciate</groupId>
+	      	<artifactId>enunciate-core</artifactId>
+	      	<version>${com.webcohesion.enunciate-version}</version>
+	    </dependency>
+        
         <!-- DQaaS model & API -->
         <dependency>
         	<groupId>com.sap.hana.cloud.samples</groupId>
@@ -239,10 +247,97 @@
 					</execution>
 				</executions>
 			</plugin>
+						<!-- API documentation -->
+			<plugin>
+			  <groupId>com.webcohesion.enunciate</groupId>
+			  <artifactId>enunciate-maven-plugin</artifactId>
+			  <version>2.5.0</version>
+			  <executions>
+			    <execution>
+			      <goals>
+			        <goal>docs</goal>
+			      </goals>
+			      <configuration>
+						<docsDir>${project.basedir}/src/main/webapp/docs</docsDir>
+						<configFile>${project.basedir}/src/main/resources/META-INF/enunciate/enunciate.xml</configFile>
+				  </configuration>
+			    </execution>
+			  </executions>
+			</plugin>
+			
+			<!-- delete old API documentation as part of clean -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${project.basedir}/src/main/webapp/docs</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			
 		</plugins>
 		
 		<pluginManagement>
-			<plugins>
+						<plugins>
+				<!-- Eclipse m2e settings only - influence on the Maven build itself -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-antrun-plugin
+										</artifactId>
+										<versionRange>
+											[1.7,)
+										</versionRange>
+										<goals>
+											<goal>run</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute></execute>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.enunciate
+										</groupId>
+										<artifactId>
+											enunciate-maven-plugin
+										</artifactId>
+										<versionRange>
+											[2.5,)
+										</versionRange>
+										<goals>
+											<goal>docs</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+				
 				<!-- leading by example -->
 				<plugin>
 			        <groupId>org.apache.maven.plugins</groupId>

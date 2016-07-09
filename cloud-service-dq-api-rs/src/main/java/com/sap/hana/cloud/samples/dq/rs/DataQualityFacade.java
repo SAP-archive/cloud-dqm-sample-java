@@ -29,7 +29,7 @@ import com.sap.hana.cloud.samples.dq.model.output.ErrorMessage;
  */
 @Service("dqFacade")
 @Path("/addressCleanse")
-public class DataQualityFacade 
+public class DataQualityFacade extends BaseFacade
 {
 	@Autowired
 	DataQualityService dqSrv = null;
@@ -54,39 +54,9 @@ public class DataQualityFacade
 			AddressCleanseResponse response = dqSrv.cleanseAddress(request);
 			return Response.ok(response).build();
 		}
-		catch (ServiceException ex)
-		{
-			ErrorMessage msg = ex.getErrorMessage();
-			
-			int status = 500;
-			
-			if (msg != null && msg.getHttpStatusCode() != null)
-			{
-				status = msg.getHttpStatusCode();
-			}
-			
-			return Response.status(status).entity(msg).build();
-		}
-		catch (WebApplicationException ex) 
-		{
-			Response response = ex.getResponse();
-			
-			if (response != null)
-			{
-				int status = response.getStatus();
-				Object entity = response.getEntity();
-				
-				ErrorMessage msg = new ErrorMessage(status, "" + entity);
-				return Response.status(status).entity(msg).build();
-			}
-			
-			return ex.getResponse();
-		}
 		catch (Exception ex)
 		{
-			ErrorMessage msg = new ErrorMessage(Status.INTERNAL_SERVER_ERROR.getStatusCode(), ex.getMessage());
-			return Response.serverError().entity(msg).build();
-
+			return this.handleExceptions(ex, "cleanseAddress()");
 		}
 	}
 }

@@ -1,9 +1,9 @@
+
 <!doctype html lang="en">
 <html class="no-js" lang="en" ng-app="dqApp">
 <head>
   <meta charset="utf-8">
 
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>DQaaS - Test drive</title>
@@ -20,7 +20,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js"></script>
   
   <script src="js/dq.address-cleanse.ctlr.js"></script>
-
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +43,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Data Quality Microservices (BETA) - Test drive</a>
+          <a class="navbar-brand" href="index.html">DQaaS [BETA] - Testbed</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -61,71 +60,126 @@
                 <div id="msg" class="alert" role="alert">{{message}}</div>
              </div>
         </div> <!-- row: messages -->
+        
+        <div class="row">
+             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Examples:
+                            <div class="btn-group btn-group-xs" role="group" aria-label="First group"> 
+                                <button type="button" class="btn btn-default" id="button_us" ng-click="example('us')">us</button> 
+                                <button type="button" class="btn btn-default" id="button_br" ng-click="example('br')">br</button> 
+                                <button type="button" class="btn btn-default" id="button_fr" ng-click="example('fr')">jp</button> 
+                                <button type="button" class="btn btn-default" id="button_de" ng-click="example('de')">de</button> 
+                                <button type="button" class="btn btn-default" id="button_in" ng-click="example('in')">jp</button> 
+                                <button type="button" class="btn btn-default" id="button_jp" ng-click="example('jp')">jp</button> 
+                                <button type="button" class="btn btn-default" id="button_mx" ng-click="example('mx')">mx</button> 
+                                <button type="button" class="btn btn-default" id="button_ru" ng-click="example('ru')">ru</button>  
+                            </div>
+                            <div class="btn-group btn-group-xs" role="group" aria-label="Second group">
+                            	 <button type="button" class="btn btn-default" id="button_sap" ng-click="example('sap')">sap</button>   
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row: toolbar -->
+                 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       		    <form id="contact" name="contact" method="POST" enctype="application/json" autocomplete="on"  class="form-horizontal">
       		        <fieldset>
       		            <!-- Address form -->
                         <a id="address_data"></a>
-      		            <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Address data</h3>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist" id="myTabs">
+                            <li role="presentation" class="active"><a href="#format1" aria-controls="format1" role="tab" data-toggle="tab">Format 1</a></li>
+                            <li role="presentation" ><a href="#format2" aria-controls="format2" role="tab" data-toggle="tab">Format 2</a></li>
+                            <li role="presentation" ><a href="#format3"a ria-controls="format3" role="tab" data-toggle="tab">Format 3</a></li>
+                            <li role="presentation" ><a href="#format4" aria-controls="format4" role="tab" data-toggle="tab">Format 4</a></li>
+                        </ul>
+                        <p>&nbsp;</p>
+      		            <!-- Tab panes -->
+                        <div class="tab-content" id="myTabContent">
+                            <div role="tabpanel" class="tab-pane active" id="format1">
+                                <div class="panel panel-default">                            
+                                     <div class="panel-body">
+                                         <!-- address-line1 input-->
+                                         <div class="control-group" id="address-line1-group">
+                                           <label class="control-label">Address Line 1</label>
+                                           <div class="controls">
+                                               <input id="address-line1" name="address-line1" type="text" placeholder="Street address, P.O. box, company name, c/o" class="form-control" ng-model="addressInput.mixed">
+                                               <!-- <p class="help-block"></p> -->
+                                           </div>
+                                         </div>
+                                         <!-- address-line2 input-->
+                                         <div class="control-group" id="address-line2-group">
+                                             <label class="control-label">Address Line 2</label>
+                                             <div class="controls">
+                                                 <input id="address-line2" name="address-line2" type="text" placeholder="Apartment, suite , unit, building, floor, etc." class="form-control" ng-model="addressInput.mixed2">
+                                                 <!-- <p class="help-block"></p> -->
+                                             </div>
+                                         </div>
+                                         <!-- city input-->
+                                         <div class="control-group" id="city-group">
+                                             <label class="control-label">City / Town</label>
+                                             <div class="controls">
+                                                 <input id="city" name="city" type="text" placeholder="" class="form-control" ng-model="addressInput.locality">
+                                                 <!-- <p class="help-block"></p> -->
+                                             </div>
+                                         </div>
+                                         <!-- region input-->
+                                         <div class="control-group" id="region-group">
+                                             <label class="control-label">State / Province / Region</label>
+                                             <div class="controls">
+                                                 <input id="region" name="region" type="text" placeholder="" class="form-control" ng-model="addressInput.region">
+                                                 <!-- <p class="help-block"></p> -->
+                                             </div>
+                                         </div>
+                                         <!-- postal-code input-->
+                                         <div class="control-group" id="postal-code-group">
+                                             <label class="control-label">Zip / Postal Code</label>
+                                             <div class="controls">
+                                                 <input id="postal-code" name="postal-code" type="text" placeholder="" class="form-control" ng-model="addressInput.postcode">
+                                                <!-- <p class="help-block"></p> -->
+                                             </div>
+                                         </div>
+                                         <!-- country select -->
+                                         <div class="control-group" id="country-group">
+                                             <label class="control-label">Country Code</label>
+                                             <div class="controls">
+                                                 <input id="country-code" name="country-code" type="text" placeholder="" class="form-control" ng-model="addressInput.country">
+                                                 <!-- <p class="help-block"></p> -->
+                                             </div>
+                                         </div>
+                                    </div> <!-- panel-body -->
+                                </div> <!-- panel -->
+                            </div> <!-- tabpanel 1-->
+                            <div role="tabpanel" class="tab-pane" id="format2">
+                                <div class="panel panel-default">                            
+                                     <div class="panel-body">
+                                         Format 2 - WIP
+                                    </div>
+                                </div>
                             </div>
-                            <div class="panel-body">
-      						    <!-- address-line1 input-->
-                                <div class="control-group" id="address-line1-group">
-                                  <label class="control-label">Address Line 1</label>
-                                  <div class="controls">
-                                      <input id="address-line1" name="address-line1" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.mixed">
-                                      <p class="help-block">Street address, P.O. box, company name, c/o</p>
-                                  </div>
-                                </div>
-                                <!-- address-line2 input-->
-                                <div class="control-group" id="address-line2-group">
-                                    <label class="control-label">Address Line 2</label>
-                                    <div class="controls">
-                                        <input id="address-line2" name="address-line2" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.mixed2">
-                                        <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                            <div role="tabpanel" class="tab-pane" id="format3">
+                                <div class="panel panel-default">                            
+                                     <div class="panel-body">
+                                         Format 3 - WIP
                                     </div>
                                 </div>
-                                <!-- city input-->
-                                <div class="control-group" id="city-group">
-                                    <label class="control-label">City / Town</label>
-                                    <div class="controls">
-                                        <input id="city" name="city" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.locality">
-                                        <p class="help-block"></p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="format4">
+                                <div class="panel panel-default">                            
+                                     <div class="panel-body">
+                                         Format 4 - WIP
                                     </div>
                                 </div>
-                                <!-- region input-->
-                                <div class="control-group" id="region-group">
-                                    <label class="control-label">State / Province / Region</label>
-                                    <div class="controls">
-                                        <input id="region" name="region" type="text" placeholder="" class="form-control  input-xlarge" ng-model="addressInput.region">
-                                        <p class="help-block"></p>
-                                    </div>
-                                </div>
-                                <!-- postal-code input-->
-                                <div class="control-group" id="postal-code-group">
-                                    <label class="control-label">Zip / Postal Code</label>
-                                    <div class="controls">
-                                        <input id="postal-code" name="postal-code" type="text" placeholder="" class="form-control  input-xlarge" ng-model="addressInput.postcode">
-                                        <p class="help-block"></p>
-                                    </div>
-                                </div>
-                                <!-- country select -->
-                                <div class="control-group" id="country-group">
-                                    <label class="control-label">Country Code</label>
-                                    <div class="controls">
-                                        <input id="country-code" name="country-code" type="text" placeholder="" class="form-control input-xlarge" ng-model="addressInput.country">
-                                        <p class="help-block"></p>
-                                    </div>
-                                </div>
-                                
-                                
-                                <hr />
-      						    <button type="submit" id="cleanseButton" name="cleanse" value="cleanse" class="btn btn-primary" ng-click="cleanse()">Cleanse</button>
-                            </div> <!-- panel-body -->
-                        </div> <!-- panel -->
+                            </div>
+                        </div>    
+                                                        
+                        <hr />
+      		            <button type="submit" id="cleanseButton" name="cleanse" value="cleanse" class="btn btn-primary" ng-click="cleanse()">Cleanse</button>
+                           
       		        </fieldset>
       		    </form>
       		</div> <!-- address form -->
@@ -146,5 +200,13 @@
   <!-- JavaScript at the bottom for fast page loading -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <script>
+        $('#myTabs a').click(function (e) 
+        {
+ 		 	e.preventDefault();
+  			$(this).tab('show');
+		});
+    </script>
 </body>
 </html>

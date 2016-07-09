@@ -1,0 +1,33 @@
+{
+  "addressInput": {
+    "mixed": "EDIFICIO B PISO 7",
+    "mixed2": "NORTE 45, 816",
+    "locality": "AZCAPOTZALCO",
+    "locality2": "INDUSTRIAL VALLEJO",
+    "region": "D.F.",
+    "postcode": "",
+    "country": "MX"
+  },
+
+  "outputFields": [
+    "std_addr_prim_address",
+    "std_addr_sec_address",
+    "std_addr_locality_full",
+    "std_addr_locality2_full",
+    "std_addr_region_full",
+    "std_addr_postcode_full",
+    "std_addr_country_name",
+    "std_addr_country_2char",
+    "addr_info_code",
+    "addr_info_code_msg"
+  ],
+
+  "addressSettings": {
+    "casing": "mixed",
+    "diacritics": "include",
+    "scriptConversion": "none",
+    "streetFormat": "countryCommonStyle",
+    "postalFormat": "countryCommonStyle",
+    "regionFormat": "countryCommonStyle"
+  }
+}

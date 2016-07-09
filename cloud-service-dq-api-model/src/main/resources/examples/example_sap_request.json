@@ -1,0 +1,60 @@
+{
+  "addressInput": {
+    "street": "NORTH MICHIGAN AVENUE",
+    "house_num": "875",
+    "house_num2": "SUITE 899",
+    "floor": "",
+    "roomnumber": "",
+    "building": "",
+    "street_suppl": "",
+    "street_suppl2": "",
+    "street_suppl3": "",
+    "location": "",
+    "locality": "CHICAGO",
+    "locality2": "",
+    "locality3": "",
+    "region": "IL",
+    "postcode": "",
+    "country": "US",
+    "po_box": "5500",
+    "po_box_locality": "",
+    "po_box_region": "",
+    "po_box_postcode": "",
+    "po_box_country": ""
+  },
+
+  "outputFields": [
+    "std_addr_prim_name1_4",
+    "std_addr_prim_number_full",
+    "std_addr_secaddr_no_floor_room",
+    "std_addr_floor_number",
+    "std_addr_room_number",
+    "std_addr_building_name1_2",
+    "addr_remainder_extra_pmb_full",
+    "std_addr_point_of_ref1_2",
+    "std_addr_locality3_4_full",
+    "std_addr_locality_full",
+    "std_addr_locality2_full",
+    "std_addr_region_full",
+    "std_addr_postcode_full",
+    "std_addr_country_2char",
+    "std_addr_po_box_number",
+    "std_addr_po_box_locality_full",
+    "std_addr_po_box_region_full",
+    "std_addr_po_box_postcode_full",
+    "std_addr_po_box_country_2char",
+    "addr_info_code",
+    "addr_info_code_msg",
+    "addr_po_box_info_code",
+    "addr_po_box_info_code_msg"
+  ],
+
+  "addressSettings": {
+    "casing": "mixed",
+    "diacritics": "include",
+    "scriptConversion": "none",
+    "streetFormat": "countryCommonStyle",
+    "postalFormat": "countryCommonStyle",
+    "regionFormat": "countryCommonStyle"
+  }
+}

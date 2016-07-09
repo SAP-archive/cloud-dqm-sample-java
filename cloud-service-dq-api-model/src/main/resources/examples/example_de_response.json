@@ -1,0 +1,11 @@
+{
+  "std_addr_address_delivery": "Kölner Straße 7",
+  "std_addr_locality_full": "Stuttgart",
+  "std_addr_locality2_full": "Münster",
+  "std_addr_region_full": "BW",
+  "std_addr_postcode_full": "70376",
+  "std_addr_country_name": "Deutschland",
+  "std_addr_country_2char": "DE",
+  "addr_info_code": "",
+  "addr_info_code_msg": ""
+}

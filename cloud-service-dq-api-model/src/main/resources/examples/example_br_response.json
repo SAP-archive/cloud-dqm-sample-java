@@ -1,0 +1,14 @@
+{
+  "std_addr_prim_address": "Avenida das Américas, 3430 Bloco 2",
+  "std_addr_sec_address": "8 And",
+  "std_addr_address_dual": "CP 5500",
+  "std_addr_building_name": "Torre 1",
+  "std_addr_locality_full": "Rio de Janeiro",
+  "std_addr_locality2_full": "Barra da Tijuca",
+  "std_addr_region_full": "RJ",
+  "std_addr_postcode_full": "22640-102",
+  "std_addr_country_name": "Brasil",
+  "std_addr_country_2char": "BR",
+  "addr_info_code": "",
+  "addr_info_code_msg": ""
+}

@@ -1,0 +1,35 @@
+{
+  "addressInput": {
+    "mixed": "TORRE 1",
+    "mixed2": "AVENIDA DAS AMERICAS 3430, BLOCO 2, ANDAR 8",
+    "mixed3": "CP 5500",
+    "locality": "RIO DE JANEIRO",
+    "region": "RJ",
+    "postcode": "",
+    "country": "BR"
+  },
+
+  "outputFields": [ 
+    "std_addr_prim_address",
+    "std_addr_sec_address",
+    "std_addr_address_dual",
+    "std_addr_building_name",
+    "std_addr_locality_full",
+    "std_addr_locality2_full",
+    "std_addr_region_full",
+    "std_addr_postcode_full",
+    "std_addr_country_name",
+    "std_addr_country_2char",
+    "addr_info_code",
+    "addr_info_code_msg"
+  ],
+
+  "addressSettings": {
+    "casing": "mixed",
+    "diacritics": "include",
+    "scriptConversion": "none",
+    "streetFormat": "countryCommonStyle",
+    "postalFormat": "countryCommonStyle",
+    "regionFormat": "countryCommonStyle"
+  }
+}

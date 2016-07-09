@@ -1,0 +1,35 @@
+{
+  "addressInput": {
+    "mixed": "6丁目10番",
+    "locality": "豊平区",
+    "locality2": "豊平",
+    "locality3": "六条",
+    "region": "北海道",
+    "postcode": "0628607",
+    "country": "JP"
+  },
+
+  "outputFields": [
+    "std_addr_single_address",
+    "std_addr_country_name",
+    "std_addr_country_2char",
+    "std_addr_postcode_full",
+    "std_addr_region_full",
+    "std_addr_locality_full",
+    "std_addr_locality2_full",
+    "std_addr_locality3_4_full",
+    "std_addr_prim_address",
+    "std_addr_sec_address",
+    "addr_info_code",
+    "addr_info_code_msg"
+  ],
+
+  "addressSettings": {
+    "casing": "mixed",
+    "diacritics": "include",
+    "scriptConversion": "none",
+    "streetFormat": "countryCommonStyle",
+    "postalFormat": "countryCommonStyle",
+    "regionFormat": "countryCommonStyle"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "addressInput": {
+    "mixed": "KOELNER STR. 7",
+    "locality": "STUTTGART",
+    "postcode": "70376",
+    "country": "DE"
+  },
+
+  "outputFields": [
+    "std_addr_address_delivery",
+    "std_addr_locality_full",
+    "std_addr_locality2_full",
+    "std_addr_region_full",
+    "std_addr_postcode_full",
+    "std_addr_country_name",
+    "std_addr_country_2char",
+    "addr_info_code",
+    "addr_info_code_msg"
+  ],
+
+  "addressSettings": {
+    "casing": "mixed",
+    "diacritics": "include",
+    "scriptConversion": "none",
+    "streetFormat": "countryCommonStyle",
+    "postalFormat": "countryCommonStyle",
+    "regionFormat": "countryCommonStyle"
+  }
+}

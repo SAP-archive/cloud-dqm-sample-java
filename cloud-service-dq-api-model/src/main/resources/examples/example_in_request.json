@@ -1,0 +1,38 @@
+{
+  "addressInput": {
+    "mixed": "PLOT NO. 250, UNIT NO. 402",
+    "mixed2": "NEAR ALOK RUBPLAST",
+    "mixed3": "OPP. SUN PHARMA",
+    "mixed4": "HREC INDUSTRIAL AREA",
+    "locality": "PARDI",
+    "locality2": "DADRA VILLAGE",
+    "region": "DIST. SILVASSA",
+    "postcode": "396191",
+    "country": "IN"
+  },
+
+  "outputFields": [
+    "std_addr_point_of_ref",
+    "std_addr_point_of_ref2",
+    "std_addr_area_name",
+    "std_addr_address_delivery",
+    "std_addr_locality_full",
+    "std_addr_locality2_full",
+    "std_addr_region_full",
+    "std_addr_region2",
+    "std_addr_postcode_full",
+    "std_addr_country_name",
+    "std_addr_country_2char",
+    "addr_info_code",
+    "addr_info_code_msg"
+  ],
+
+  "addressSettings": {
+    "casing": "mixed",
+    "diacritics": "include",
+    "scriptConversion": "none",
+    "streetFormat": "countryCommonStyle",
+    "postalFormat": "countryCommonStyle",
+    "regionFormat": "countryCommonStyle"
+  }
+}

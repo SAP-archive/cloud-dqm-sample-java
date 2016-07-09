@@ -1,0 +1,30 @@
+{
+  "addressInput": {
+    "mixed": "5 BD PIERRE LEFAUCHEUX",
+    "mixed2": "BOITE POSTALE 50",
+    "locality": "LE MANS",
+    "postcode": "",
+    "country": "FR"
+  },
+
+  "outputFields": [
+    "std_addr_addr_deldual",
+    "std_addr_building_name",
+    "std_addr_locality_full",
+    "std_addr_postcode_full",
+    "std_addr_region_full",
+    "std_addr_country_name",
+    "std_addr_country_2char",
+    "addr_info_code",
+    "addr_info_code_msg"
+  ],
+
+  "addressSettings": {
+    "casing": "mixed",
+    "diacritics": "include",
+    "scriptConversion": "none",
+    "streetFormat": "countryCommonStyle",
+    "postalFormat": "countryCommonStyle",
+    "regionFormat": "countryCommonStyle"
+  }
+}

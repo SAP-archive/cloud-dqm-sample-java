@@ -24,6 +24,7 @@
         </jaxrs:properties>
 		<jaxrs:serviceBeans>
 			<ref bean="dqFacade" />
+			<ref bean="exampleFacade" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
             <ref bean="jacksonProvider" />

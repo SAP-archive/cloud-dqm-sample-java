@@ -1,0 +1,31 @@
+{
+  "addressInput": {
+    "mixed": "875 NORTH MICHIGAN AVENUE, SUITE 899",
+    "mixed2": "PO BOX 5500",
+    "locality": "CHICAGO",
+    "region": "ILINOIS",
+    "postcode": "",
+    "country": "US"
+  },
+
+  "outputFields": [ 
+    "std_addr_address_delivery",
+    "std_addr_address_dual",
+    "std_addr_locality_full",
+    "std_addr_region_full",
+    "std_addr_postcode_full",
+    "std_addr_country_name",
+    "std_addr_country_2char",
+    "addr_info_code",
+    "addr_info_code_msg"
+  ],
+
+   "addressSettings": {
+    "casing": "mixed",
+    "diacritics": "include",
+    "scriptConversion": "none",
+    "streetFormat": "countryCommonStyle",
+    "postalFormat": "countryCommonStyle",
+    "regionFormat": "countryCommonStyle"
+  }
+}

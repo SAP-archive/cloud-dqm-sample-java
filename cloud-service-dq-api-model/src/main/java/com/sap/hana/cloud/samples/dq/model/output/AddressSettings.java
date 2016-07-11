@@ -2,15 +2,30 @@ package com.sap.hana.cloud.samples.dq.model.output;
 
 /**
  * You may control the format of the cleansed address by including the
- * <code>AddressSettings</code> object in the payload. When the addressSettings
+ * <code>AddressSettings</code> object in the payload. When the <code>AddressSettings</code>
  * object is omitted, the cleansed address is standardized according to the
- * default format values, shown here.
- * 
- * When including the addressSettings object, you only need to include the
+ * default format values, shown here:<br /><br />
+ * <pre>
+  "addressSettings": {
+  "casing": "mixed",
+  "diacritics": "include",
+  "scriptConversion": "none",
+  "streetFormat": "countryCommonStyle",
+  "postalFormat": "countryCommonStyle",
+  "regionFormat": "countryCommonStyle"
+  }
+ *</pre> 
+ * <br />
+ * When including the <code>AddressSettings</code> object, you only need to include the
  * settings that you want to standardize differently than the default format.
  * For example, to accept the default formats for all settings except the street
  * format, send the request with only the streetFormat setting with your
- * preferred format value.
+ * preferred format value.<br /><br />
+ * <pre>
+   "addressSettings": {
+   "streetFormat": "abbreviateNoPunctuation"
+   }
+ *</pre>
  * 
  * @see http://help.sap.com/saphelpiis_dqmmicro1/dqm_micro_loc_1_dev_en/frameset.htm?dbcab13577474284824c7e278259209f.html
  */

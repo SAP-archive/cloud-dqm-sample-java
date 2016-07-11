@@ -3,17 +3,14 @@ package com.sap.hana.cloud.samples.dq.model;
 import java.io.Serializable;
 
 /**
- * Dumb (reads: flat) address input object.
+ * Address input object<br />
  * 
- * TODO convert into nested objects for structural reasons
- *
- * 
- * The set of fields selected must use one of the following formats.
+ * The set of fields selected must use one of the following formats.<br />
  * <ul>
- * <li>{@link AddressFormat1} – part free-form, part discrete</li>
- * <li>{@link AddressFormat2} – completely free-form</li>
- * <li>{@link AddressFormat3} – only city, region, or postcode</li> 
- * <li>{@link AddressFormat4} – SAP Business Suite</li>
+ * <li><code>AddressFormat1</code> – part free-form, part discrete</li>
+ * <li><code>AddressFormat2</code> – completely free-form</li>
+ * <li><code>AddressFormat3</code> – only city, region, or postcode</li> 
+ * <li><code>AddressFormat4</code> – SAP Business Suite</li>
  * </ul>
  * The JSON structure may exclude fields that do not include values as long as
  * they are not required.
@@ -25,6 +22,11 @@ import java.io.Serializable;
  * postcode, include the postcode field in the request without a value.
  * 
  * @see http://help.sap.com/saphelpiis_dqmmicro1/dqm_micro_loc_1_dev_en/frameset.htm?d5dbe108aaee4fecbe2998996ce1954e.html
+ */
+
+/*
+ * TODO convert into nested objects for structural reasons
+ *
  */
 public class AddressInput implements Serializable
 {

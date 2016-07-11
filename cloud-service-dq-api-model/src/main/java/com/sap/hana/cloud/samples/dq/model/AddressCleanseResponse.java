@@ -2,10 +2,14 @@ package com.sap.hana.cloud.samples.dq.model;
 
 import java.io.Serializable;
 
-/**
- 
+import com.webcohesion.enunciate.metadata.Label;
 
+/**
+ * The <code>AddressCleanseResponse</code> contains the cleansed address.
+ * 
+ * @label AddressCleanseResponse
  */
+@Label("AddressCleanseResponse")
 public class AddressCleanseResponse implements Serializable
 {
 

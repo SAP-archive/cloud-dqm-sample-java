@@ -8,11 +8,10 @@
 	
 	<terms>Apache License, Version 2.0 </terms>
 
-	<application root="/" />
+	<application root="/dq" />
 	
 	<api-classes>
 		<include pattern="com.sap.hana.cloud.samples.dq.model.**" />
-		
 		<exclude pattern="com.sap.hana.cloud.samples.dq.api.*" />
 	</api-classes>
 
@@ -23,14 +22,20 @@
 		      faviconUri="/resources/img/favicon.ico" 
 		      freemarkerTemplate="docs.fmt"
 		      includeApplicationPath="true"
-		      disableResourceLinks="false" />
+		      disableResourceLinks="false">
+		      
+		    <facets>
+		       	<exclude name="test"/>
+			</facets>
+		      
+		</docs>
 		      
 		<swagger disabled="true"/>
 
 		<gwt-json-overlay disabled="true" />
 		<idl disabled="true" />
 
-		<jackson1 disabled="true" />
+		<jackson1 disabled="false" />
 		<jaxb disabled="true" />
 		<jaxws disabled="true" />
 		<spring-web disabled="true" />

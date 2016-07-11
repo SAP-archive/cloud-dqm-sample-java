@@ -4,11 +4,16 @@ import java.io.Serializable;
 
 import com.sap.hana.cloud.samples.dq.model.output.AddressSettings;
 import com.sap.hana.cloud.samples.dq.model.output.OutputFields;
+import com.webcohesion.enunciate.metadata.Label;
+import com.webcohesion.enunciate.metadata.json.JsonSeeAlso;
 
 /**
+ * The <code>AddressCleanseRequest</code> is used as input parameter for the <code>Cleanse Address</code> microservice.
  * 
- * @see 
+ * @label AddressCleanseRequest
  */
+@Label("AddressCleanseRequest")
+@JsonSeeAlso( { AddressInput.class, AddressSettings.class })
 public class AddressCleanseRequest implements Serializable
 {
 
@@ -17,10 +22,23 @@ public class AddressCleanseRequest implements Serializable
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The <code>AddressInput</code> object
+	 */
 	AddressInput addressInput = null;
 	
+	/**
+	 * Array of <code>outputFields</code>
+	 * <br />
+	 * See <a href="http://help.sap.com/saphelpiis_dqmmicro1/dqm_micro_loc_1_dev_en/frameset.htm?fecc2111811143708ad92bfec8850b4c.html">selecting Address Output Properties</a>
+	 */
 	String[] outputFields = OutputFields.INFO_STR; // ensure that we have at least information data included 
 	
+	/**
+	 * Configurable address settings 
+	 * <br />
+	 * See <a href="http://help.sap.com/saphelpiis_dqmmicro1/dqm_micro_loc_1_dev_en/frameset.htm?dbcab13577474284824c7e278259209f.html">Configurable Address Settings</a>
+	 */
 	AddressSettings AddressSettings = new AddressSettings(); // apply defaults
 
 	public AddressCleanseRequest() 

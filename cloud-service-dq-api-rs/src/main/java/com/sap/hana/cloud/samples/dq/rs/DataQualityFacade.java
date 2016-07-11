@@ -19,11 +19,18 @@ import org.springframework.stereotype.Service;
 import com.sap.hana.cloud.samples.dq.api.DataQualityService;
 import com.sap.hana.cloud.samples.dq.model.AddressCleanseRequest;
 import com.sap.hana.cloud.samples.dq.model.AddressCleanseResponse;
+import com.webcohesion.enunciate.metadata.Facet;
+import com.webcohesion.enunciate.metadata.rs.ResourceLabel;
+import com.webcohesion.enunciate.metadata.rs.ServiceContextRoot;
+import com.webcohesion.enunciate.metadata.rs.TypeHint;
 
 /**
  * This service offers cloud-based microservices for address cleansing, geocoding, and reverse geocoding. 
  * You can embed address cleansing and enrichment services within any business process or application so 
- * that you can quickly reap the value of complete and accurate address data.<br />
+ * that you can quickly reap the value of complete and accurate address data.
+ */
+
+/*
  * <br />
  * With this product, you can provide users with self-service, right-sized consumption of data quality services, 
  * eliminate operational complexity and infrastructure costs, and quickly deploy on many SAP applications 
@@ -44,23 +51,30 @@ import com.sap.hana.cloud.samples.dq.model.AddressCleanseResponse;
  * The extent to which address cleansing, geocoding, and reverse geocoding is available depends on the country in which 
  * the address is located.<br />
  */
+
 @Service("dqFacade")
 @Path("/addressCleanse")
-@com.webcohesion.enunciate.metadata.rs.ResourceLabel(value="DQaaS (BETA)")
-@com.webcohesion.enunciate.metadata.rs.ServiceContextRoot(value="/dq")
+@Facet(value="DQaaS - Address Cleanse", documentation="This service offers cloud-based microservices for address cleansing.")
+@ResourceLabel(value="Address Cleanse")
+@ServiceContextRoot(value="/dq")
 public class DataQualityFacade extends BaseFacade
 {
 	@Autowired
 	DataQualityService dqSrv = null;
 	
 	/**
-	 * @return 
+	 * Returns the <code>AddressCleanseResponse</code> as returned from a simple
+	 * example test case.
+	 * 
+	 * @return <code>AddressCleanseResponse</code> as returned from a simple example test case
 	 */
+	/*
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@com.webcohesion.enunciate.metadata.rs.ResourceLabel("test")
-	@com.webcohesion.enunciate.metadata.rs.TypeHint(AddressCleanseResponse.class)
-	@com.webcohesion.enunciate.metadata.Ignore
+	@ResourceLabel("test")
+	@TypeHint(AddressCleanseResponse.class)
+	@Facet(value="test")
+	*/
 	public Response test() throws IOException
 	{
 		try
@@ -92,12 +106,15 @@ public class DataQualityFacade extends BaseFacade
 	 * 
 	 * @param request The request
 	 * @return The response
+	 * 
+	 * @inputWrapped com.sap.hana.cloud.samples.dq.model.AddressCleanseRequest
+	 * @returnWrapped com.sap.hana.cloud.samples.dq.model.AddressCleanseResponse
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	@com.webcohesion.enunciate.metadata.rs.ResourceLabel("cleanseAddress")
-	@com.webcohesion.enunciate.metadata.rs.TypeHint(AddressCleanseResponse.class)
+	@ResourceLabel("cleanseAddress")
+	@TypeHint(AddressCleanseResponse.class)
 	public Response cleanseAddress(AddressCleanseRequest request)
 	{
 		try

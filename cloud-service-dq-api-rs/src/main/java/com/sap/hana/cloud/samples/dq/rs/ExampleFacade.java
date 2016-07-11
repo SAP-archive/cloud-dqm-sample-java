@@ -21,12 +21,19 @@ import org.springframework.stereotype.Service;
 import com.sap.hana.cloud.samples.dq.api.DataQualityService;
 import com.sap.hana.cloud.samples.dq.model.AddressCleanseRequest;
 import com.sap.hana.cloud.samples.dq.model.AddressCleanseResponse;
+import com.webcohesion.enunciate.metadata.Facet;
+import com.webcohesion.enunciate.metadata.rs.ResourceLabel;
+import com.webcohesion.enunciate.metadata.rs.ServiceContextRoot;
+import com.webcohesion.enunciate.metadata.rs.TypeHint;
 
 /**
- *  
+ * This service provides pre-defined examples.
  */
 @Service("exampleFacade")
 @Path("/example")
+@Facet(value="Examples", documentation="This service provides pre-defined examples.")
+@ResourceLabel(value="Examples ")
+@ServiceContextRoot(value="/dq")
 public class ExampleFacade extends BaseFacade
 {
 	@Autowired
@@ -35,10 +42,20 @@ public class ExampleFacade extends BaseFacade
 	@Autowired
 	ObjectMapper mapper = null;
 	
+	/**
+	 * Returns a pre-defined {@link AddressCleanseRequest} object for the specified <code>countryCode</code>, or
+	 * the respective {@link AddressCleanseResponse} if <code>execute</code> is to <code>true</code>
+	 * 
+	 * @param countryCode The country code (e.g. 'en', 'us', etc.)
+	 * @param execute whether or not to execute the respective example right away.
+	 * @return The requested {@link AddressCleanseRequest} or {@link AddressCleanseResponse} if <code>execute</code> was set to true
+	 */
 	@GET
 	@Path("/{countryCode}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response test(@PathParam("countryCode") String countryCode, @QueryParam("execute") Boolean execute) 
+	@ResourceLabel("getExample")
+	@TypeHint(AddressCleanseRequest.class)
+	public Response getExample(@PathParam("countryCode") String countryCode, @QueryParam("execute") Boolean execute) 
 	{
 		AddressCleanseResponse retVal = null;
 		

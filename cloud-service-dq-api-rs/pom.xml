@@ -183,7 +183,7 @@
 	      	<artifactId>enunciate-core</artifactId>
 	      	<version>${com.webcohesion.enunciate-version}</version>
 	    </dependency>
-        
+                
         <!-- DQaaS model & API -->
         <dependency>
         	<groupId>com.sap.hana.cloud.samples</groupId>
@@ -262,6 +262,20 @@
 						<configFile>${project.basedir}/src/main/resources/META-INF/enunciate/enunciate.xml</configFile>
 				  </configuration>
 			    </execution>
+			    <execution>
+			      <id>assemble</id>
+			      <goals>
+			        <goal>assemble</goal>
+			      </goals>
+			      <configuration>
+			        <sourcepath-includes>
+			          <include>
+			            <!-- configure Enunciate to look for the source jars for all dependencies in the "com.mycompany.domain" groupId.-->
+			            <groupId>com.sap.hana.cloud.samples</groupId>
+			          </include>
+			        </sourcepath-includes>
+			      </configuration>
+			    </execution>
 			  </executions>
 			</plugin>
 			
@@ -327,6 +341,25 @@
 										</versionRange>
 										<goals>
 											<goal>docs</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.webcohesion.enunciate
+										</groupId>
+										<artifactId>
+											enunciate-maven-plugin
+										</artifactId>
+										<versionRange>
+											[2.5.0,)
+										</versionRange>
+										<goals>
+											<goal>assemble</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>

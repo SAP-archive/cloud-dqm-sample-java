@@ -1,3 +1,8 @@
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+# Important Notice
+This public repository is read-only and no longer maintained.
+
 # cloud-service-dq-api
 
 Simple service wrapper/API for the SAP HANA Cloud Platform, Data Quality Microservice (DQaaS) 
